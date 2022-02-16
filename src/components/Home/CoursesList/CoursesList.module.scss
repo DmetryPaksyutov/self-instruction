@@ -1,0 +1,21 @@
+@import '../../common/parameters';
+
+.coursesList {
+  margin-top: 100px;
+}
+
+.coursesList__title {
+  font-family: Roboto;
+  font-size: 30px;
+}
+
+.coursesList__list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 680px) {
+    justify-content: space-around;
+  }
+}

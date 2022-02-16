@@ -1,0 +1,67 @@
+@import '../common/parameters';
+
+.navbar {
+  width: 100%;
+  height: 40px;
+  background-color: $orange1;
+  position: sticky;
+  z-index: 50;
+}
+
+.navbar__content {
+  display: grid;
+  grid-template-columns: 80px auto 120px;
+  grid-template-areas: 'logo menu icon';
+  padding: 0 15px;
+}
+
+
+.navbar__logo {
+  grid-area: logo;
+}
+
+%navbar__menuItem {
+  padding: 7px 20px;
+  transition-duration: 400ms;
+  a {
+    font-family: Roboto;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: $orange3;
+  }
+}
+
+.navbar__navigationMenu {
+  display: flex;
+  margin-left: 20px;
+  grid-area: menu;
+  >div{
+    @extend %navbar__menuItem;
+  }
+
+}
+
+.navbar__profile {
+  grid-area: icon;
+}
+
+.navbar__burger {
+  grid-area: icon;
+  display: none;
+}
+
+.navbar__enter {
+  @extend %navbar__menuItem;
+  grid-area: icon;
+}
+
+@media (max-width: 780px) {
+  .navbar__profile {display: none;}
+  .navbar__enter {display: none;}
+  .navbar__navigationMenu {display: none;}
+  .navbar__burger {display: block;}
+
+}

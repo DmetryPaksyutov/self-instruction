@@ -1,0 +1,43 @@
+@import '../common/parameters';
+
+.login {
+  position: absolute;
+  top: 150px;
+  left: #{"calc(50% - 165px)"};
+
+  width: 330px;
+  box-shadow: 0 0 4px 1px $gray;
+  border-radius: 4px;
+
+  display: grid;
+  grid-template-rows: 70px auto;
+  grid-template-columns: 220px 110px;
+  grid-template-areas: 'reg login'
+  'form form';
+}
+
+.login__typeForm {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  font-family: Roboto;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.login__typeForm_active {
+  color: $darkBlue;
+  border-bottom: 1px solid $orange1;
+  font-weight: bold;
+}
+
+.login__typeForm_noActive {
+  color: gray;
+}
+
+.login__form {
+  grid-area: form;
+  width: 310px;
+  margin: 30px auto 15px auto;
+}

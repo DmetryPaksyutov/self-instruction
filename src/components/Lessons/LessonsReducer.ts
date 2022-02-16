@@ -1,0 +1,104 @@
+import {InferValueTypes} from "../../redux/store";
+import {AnyAction} from "redux";
+import {api} from "../../packets/api";
+import {ILesson, apiResponse, ICourse} from "../../packets/api/TypeRequest";
+
+
+interface ILessonsState {
+    lessons : ILesson[],
+    tests : any[],
+}
+
+export const initialLessonsState : ILessonsState = {
+    lessons : [],
+    tests : [],
+}
+
+export const LessonsReducer = (state : ILessonsState, action : LessonsActionsType) => {
+    switch (action.type) {
+        case "LESSONS__SAVE_COURSE" :
+            return {...state, lessons : action.course.lessons, tests : action.course.tests}
+        default : return state
+    }
+}
+
+export const LessonsActions = {
+    setCourse ( course : ICourse) {
+        return {
+            type : 'LESSONS__SAVE_COURSE' as const, course,
+        }
+    }
+}
+type LessonsActionsType = ReturnType<InferValueTypes<typeof LessonsActions>>
+
+
+type objDispatch = {  dispatch : any }
+export const LessonsAsyncActions = {
+    LESSONS__SET_COURSE : ({ dispatch } : objDispatch ) => async ( action : AnyAction) => {
+        try {
+            let res : apiResponse<ICourse> | null
+            if (action.isLogin) {
+                //res = await api.lessons.authGetCourse(action.id)
+            }
+            else {
+                //res = await api.lessons.getCourse(action.id)
+            }
+            //const course = res.data.data
+            const course =  {
+                lessons: [
+                {
+                    name: "Глагол to be - Present Simple (настоящее простое), единственное число",
+                    description: "Короткие фразы с глаголом to be в форме единственного числа настоящего времени.",
+                    id: "620a94b412d63b3f536c48f9",
+                    exercises: [
+                        {
+                            name: "Я есть",
+                            number: 1,
+                            progress: 0,
+                            balls: 0
+                        },
+                        {
+                            name: "Он есть",
+                            number: 2,
+                            progress: 0,
+                            balls: 0
+                        },
+                        {
+                            name: "Она есть",
+                            number: 3,
+                            progress: 0,
+                            balls: 0
+                        },
+                        {
+                            name: "Я не ...",
+                            number: 4,
+                            progress: 0,
+                            balls: 0
+                        }
+                    ]
+                },
+                {
+                    name: "Глагол to be - Present Simple (настоящее простое), множественное число",
+                    description: "Короткие фразы с глаголом to be в форме множественного числа настоящего времени.",
+                    id: "620a94b412d63b3f536c48fb",
+                    exercises: [
+                        {
+                            name: "Мы есть",
+                            number: 5,
+                            progress: 0,
+                            balls: 0
+                        }
+                    ]
+                }
+            ],
+                tests: []
+        }
+            //console.log(course)
+
+            dispatch(LessonsActions.setCourse(course))
+        }
+        catch (e) {
+            console.log(e)
+        }
+    },
+}

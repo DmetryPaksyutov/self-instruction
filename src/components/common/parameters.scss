@@ -1,0 +1,25 @@
+$orange1:  #D2691E;
+$orange2: #f2a54b;
+$orange3: #d77d31;
+$orange4: #fad5aa;
+$whit-yellow: #FFF8DC;
+$white1: #FEFEFE;
+$white2: #F0F0F0;
+$gray: #CDCDCD;
+$blue2: #3e5f8a;
+$blue1: #567f9b;
+$darkBlue: #3c4858;
+$green1: #337e5d;
+$green2: #587E20;
+$red1: #8B0000;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.centerBlock {
+  width: #{ "min(1200px, 98%)" };
+  height: 100%;
+  margin: 0 auto;
+}

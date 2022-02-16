@@ -1,0 +1,38 @@
+@import '../common/parameters';
+
+.form {
+  height: 100%;
+
+  >div {
+    margin-bottom: 10px;
+    >label {
+      font-size: 1rem;
+      color: $darkBlue;
+      font-family: Roboto;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  >button {
+    width: 200px;
+    height: 50px;
+
+    border: none;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    margin: 0px auto;
+    border-radius: 7px;
+    background-color: $blue1;
+    &:hover{
+      background-color: #53639B;
+      box-shadow: 0 0  3px 1px $gray;
+    }
+  }
+}

@@ -1,22 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f62f306-ec30-4741-a1f0-8e059a404230" name="Default Changelist" comment="" />
+    <list default="true" id="0f62f306-ec30-4741-a1f0-8e059a404230" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/App/App.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/CoursesList/Course/Course.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/CoursesList/Course/Course.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/CoursesList/CoursesList.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/CoursesList/CoursesList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/HomeReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/RatingList/RatingList.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Home/RatingList/RatingList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Lessons/Lessons.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Lessons/Lessons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Lessons/LessonsReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login/Form.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login/Input/Input.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login/Input/Input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login/Login.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login/LoginForm/LoginForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login/RegistrationForm/RegistrationForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login/Validators.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Burger/Burger.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Burger/Burger.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Menu/Menu.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Menu/NavigationMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Menu/ProfileMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/ProfileIcon/Profile.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navbar/ProfileIcon/Profile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/ProgressBar/ProgressBar.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/ProgressBar/ProgressBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/parameters.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/burger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/default_avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/api/TypeRequest.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/api/anyRequest.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/api/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/api/rest/Auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/api/rest/courses.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/api/rest/lessons.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/hooks.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/storage/adapters/jwtStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/storage/adapters/userStorage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/storage/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/packets/storage/storage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers/LoginReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="24VRW9aZJu3b8oFe3NxahFU5ScC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="D:\Web\project\react\self-instruction\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Web\project\react\self-instruction\src\components\common" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Login" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Navbar\Menu" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\App" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Web\project\react\self-instruction\src\components\Lessons\Lesson\Exercise" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Lessons" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Home\RatingList" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Home\CoursesList\Course" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Home\CoursesList" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -28,8 +155,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1643713796417</updated>
-      <workItem from="1643713798589" duration="286000" />
+      <workItem from="1643713798589" duration="6865000" />
+      <workItem from="1643804792736" duration="111000" />
+      <workItem from="1644035254156" duration="10815000" />
+      <workItem from="1644049941898" duration="3594000" />
+      <workItem from="1644062933396" duration="9310000" />
+      <workItem from="1644076818796" duration="5451000" />
+      <workItem from="1644132697441" duration="7738000" />
+      <workItem from="1644296698417" duration="23002000" />
+      <workItem from="1644398564608" duration="9615000" />
+      <workItem from="1644741985212" duration="13893000" />
+      <workItem from="1644848031420" duration="12848000" />
+      <workItem from="1644941722227" duration="4726000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="570" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1644035538819">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="570" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1644035538819" />
+    <state x="620" y="258" key="FileChooserDialogImpl" timestamp="1644941768188">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="258" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1644941768188" />
+    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1644331482431">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1644331482431" />
   </component>
 </project>

@@ -1,0 +1,136 @@
+@import '../../../common/parameters';
+
+.course {
+  flex:  0.3 0 200px;
+  margin: 10px;
+  max-width: 250px;
+  position: relative;
+  height: 250px;
+  border-radius: 10px;
+  background-color: $white2;
+  transition-duration: 600ms;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px $gray;
+  }
+
+  &:hover .course__details {
+    transform: scaleY(1);
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
+    max-width: none;
+    flex: auto;
+    height: 120px;
+
+  }
+}
+
+.course__content {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  @media (max-width: 450px) {
+    display: grid;
+    grid-template-rows: 100px 20px;
+    grid-template-columns: 100px auto;
+    grid-template-areas: "img name" "process process";
+  }
+
+}
+
+.course__img {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  >img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 450px) {
+    width: 100px;
+    height: 100px;
+    grid-area: img;
+    >img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+.course__name {
+  font-family: Roboto;
+  font-size: 15px;
+  text-align: center;
+  height: 70px;
+
+  @media (max-width: 450px) {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    text-align: left;
+    grid-area: name;
+  }
+
+}
+
+.course__progressBar {
+  height: 30px;
+  position: relative;
+  bottom: 0;
+  border-radius: 10px;
+
+  @media (max-width: 450px) {
+    height: 20px;
+    grid-area: process;
+  }
+}
+
+.course__details {
+  transform: scaleY(0);
+  background-color: $white1;
+  transform-origin: 0 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+  transition-duration: 600ms;
+  border-radius: 10px;
+}
+
+.course__description {
+  font-family: Roboto;
+  font-size: 17px;
+  color: $darkBlue;
+  text-align: center;
+  padding: 20px;
+  height: 60%;
+}
+
+.course__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  >button {
+    background-color: $orange1;
+    color: white;
+    font-size: 20px;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+  }
+}

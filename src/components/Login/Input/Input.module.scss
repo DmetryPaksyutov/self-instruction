@@ -1,0 +1,30 @@
+@import '../../common/parameters';
+
+.textError {
+  color: $red1;
+  font-size: 16px;
+  font-family: Roboto;
+}
+
+.input {
+  width: 306px;
+  height: 30px;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 1px solid $orange1;
+  background-color: $white2;
+  padding-left: 4px;
+
+  font-size: 15px;
+
+  &:focus{
+    outline: 0;
+    border-bottom: 2px solid $orange3;
+  }
+}
+
+.input_error {
+  border-bottom-color: $red1;
+  border-bottom-width: 2px;
+  box-shadow: 0 0 3px 1px $gray;
+}

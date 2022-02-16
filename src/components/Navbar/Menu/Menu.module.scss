@@ -1,0 +1,36 @@
+@import '../../common/parameters';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+
+.menuItems {
+  >div {
+    height: 40px;
+    width: 150px;
+    background-color: $orange2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 400ms;
+    a {
+      font-family: Roboto;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      text-transform: lowercase;
+    }
+    &:hover {
+      background-color: $orange1;
+    }
+  }
+
+}
+
+.menu_noSee {
+  display: none;
+}

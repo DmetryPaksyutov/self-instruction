@@ -1,0 +1,20 @@
+@import '../common/parameters';
+
+.home {
+  display: grid;
+  grid-template-columns: auto 300px;
+  grid-template-areas: 'content dop';
+
+  @media (max-width: 1000px) {
+    display: block;
+  }
+
+}
+
+.home__dailyPlan {
+  grid-area: dop;
+}
+
+.home__ratingList {
+  grid-area: dop;
+}
