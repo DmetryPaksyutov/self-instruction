@@ -132,5 +132,8 @@
     height: 40px;
     border-radius: 5px;
     border: none;
+    &:hover {
+      background-color: $orange2;
+    }
   }
 }

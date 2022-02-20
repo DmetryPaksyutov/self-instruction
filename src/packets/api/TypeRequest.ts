@@ -30,6 +30,7 @@ export interface ICourseInfo {
 }
 
 export interface ICourse {
+    name : string,
     lessons : ILesson[],
     tests : ITest[],
 }
@@ -38,6 +39,7 @@ export interface ILesson {
     id : string,
     name : string,
     description : string,
+    img: string,
     exercises : IExerciseInfo[],
 }
 

@@ -1,0 +1,84 @@
+@import '../../../common/parameters';
+
+.exercise {
+  flex:  0.3 0 200px;
+  margin: 10px;
+  max-width: 180px;
+  position: relative;
+  height: 130px;
+  border-radius: 10px;
+  background-color: $white2;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    .exercise__details {
+      transform: translateY(0);
+    }
+  }
+}
+
+.exercise__content {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.exercise__progressBar {
+  width: 100%;
+  height: 20px;
+}
+
+.exercise__balls {
+  font-size: 14px;
+  color: $orange3
+}
+
+.exercise__details {
+  z-index: 3;
+  width: 100%;
+  height: 130px;
+  transform: translateY(60%);
+  position: relative;
+  transition-duration: 600ms;
+}
+
+.exercise__label {
+  font-size: 16px;
+  font-family: Roboto;
+  text-transform: uppercase;
+  color: $darkBlue;
+}
+
+.exercise__name {
+  font-size: 16px;
+  font-family: Roboto;
+  color: $darkBlue;
+  font-weight: bold;
+}
+
+.exercise__button {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  >button {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: $orange1;
+    color: white;
+    font-size: 18px;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+}

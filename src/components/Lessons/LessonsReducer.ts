@@ -7,17 +7,23 @@ import {ILesson, apiResponse, ICourse} from "../../packets/api/TypeRequest";
 interface ILessonsState {
     lessons : ILesson[],
     tests : any[],
+    name : string,
 }
 
 export const initialLessonsState : ILessonsState = {
     lessons : [],
     tests : [],
+    name : '',
 }
 
 export const LessonsReducer = (state : ILessonsState, action : LessonsActionsType) => {
     switch (action.type) {
         case "LESSONS__SAVE_COURSE" :
-            return {...state, lessons : action.course.lessons, tests : action.course.tests}
+            return {...state,
+                lessons : action.course.lessons,
+                tests : action.course.tests,
+                name : action.course.name,
+            }
         default : return state
     }
 }
@@ -45,11 +51,13 @@ export const LessonsAsyncActions = {
             }
             //const course = res.data.data
             const course =  {
+                name : '4 С нуля - Beginner',
                 lessons: [
                 {
                     name: "Глагол to be - Present Simple (настоящее простое), единственное число",
                     description: "Короткие фразы с глаголом to be в форме единственного числа настоящего времени.",
                     id: "620a94b412d63b3f536c48f9",
+                    img: "https://d2y1pz2y630308.cloudfront.net/5112/pictures/2015/11/1-1.jpg",
                     exercises: [
                         {
                             name: "Я есть",
@@ -81,6 +89,7 @@ export const LessonsAsyncActions = {
                     name: "Глагол to be - Present Simple (настоящее простое), множественное число",
                     description: "Короткие фразы с глаголом to be в форме множественного числа настоящего времени.",
                     id: "620a94b412d63b3f536c48fb",
+                    img: "https://d2y1pz2y630308.cloudfront.net/5112/pictures/2015/11/1-1.jpg",
                     exercises: [
                         {
                             name: "Мы есть",

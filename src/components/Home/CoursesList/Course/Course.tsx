@@ -12,12 +12,12 @@ interface IProps {
 }
 
 export const Course : React.FC<IProps> = ({ course }) => {
-    const labelButton = (course.progress == 0 && 'Начать') || (course.progress == 100 && 'Повторить') || 'Продолжить'
+    const textButton = (course.progress == 0 && 'Начать') || (course.progress == 100 && 'Повторить') || 'Продолжить'
     return <div className={st.course}>
         <Link to={`/course/${course.id}`}><div className={st.course__content}>
         <div className={st.course__details}>
             <div className={st.course__description}><label>{course.description}</label></div>
-            <div className={st.course__button}><button>{labelButton}</button></div>
+            <div className={st.course__button}><button>{textButton}</button></div>
         </div>
         <div className={st.course__img}><img src={course.img}/></div>
 

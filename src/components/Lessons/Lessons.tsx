@@ -27,10 +27,13 @@ export const Lessons : React.FC = () => {
 
     let lessonsList : undefined | JSX.Element[]
     if (state.lessons.length) {
-        lessonsList = state.lessons.map( (lesson, index) => <Lesson lesson={lesson} test={state.tests[index]}/>)
+        lessonsList = state.lessons.map( (lesson, index) => <Lesson lesson={lesson} test={state.tests[index]} id={id}/>)
     }
 
+    if (!id) return <div><label>id not find</label></div>
+
     return <div>
+        <div className={st.lessons__header}><label>{state.name}</label></div>
         {lessonsList}
     </div>
 }

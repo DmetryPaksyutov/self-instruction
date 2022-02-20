@@ -1,0 +1,111 @@
+@import '../../common/parameters.scss';
+
+.lesson {
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.lesson__details {
+    >summary {
+        display : grid;
+        grid-template-rows: 55% 45%;
+        grid-template-columns: 100px auto 80px;
+        grid-template-areas: 'img name arrow' 'img description arrow';
+
+        width: 100%;
+        padding: 15px;
+        background-color: $white2;
+        border-radius: 4px;
+        transition-duration: 600ms;
+
+        @media (max-width: 800px) {
+            grid-template-columns: auto 80px;
+            grid-template-areas: 'name name arrow' 'description description arrow';
+        }
+
+        @media (max-width: 450px) {
+            grid-template-columns: auto;
+            grid-template-areas: 'name' 'description';
+        }
+    }
+
+
+}
+
+.lesson__details[open] {
+    >summary {
+        background-color: $orange3;
+    }
+
+    .lesson__arrow {
+        >img {
+            transform: rotate(90deg);
+        }
+    }
+
+    .lesson__name {
+        color: $white1;
+    }
+
+    .lesson__description {
+        color: $white1;
+    }
+}
+
+.lesson__img {
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >img {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+    }
+    @media (max-width: 800px) {
+        display: none;
+    }
+}
+
+.lesson__name {
+    grid-area: name;
+    font-family: Roboto;
+    font-size: 25px;
+    @media (max-width: 500px) {
+        font-size: 20px;
+    }
+}
+
+.lesson__description {
+    grid-area: description;
+    font-family: Roboto;
+    font-size: 18px;
+    margin-top: 5px;
+    @media (max-width: 500px) {
+        font-size: 16px;
+    }
+}
+
+.lesson__arrow {
+    grid-area: arrow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 1s;
+    >img {
+        width: 40px;
+        height: 60px;
+    }
+
+    @media (max-width: 450px) {
+        display: none;
+    }
+}
+
+.lesson__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: left;
+}

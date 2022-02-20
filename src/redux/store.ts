@@ -2,11 +2,13 @@ import {AnyAction, applyMiddleware, combineReducers, createStore} from "redux";
 import {reducer as reducerForm} from 'redux-form'
 import thunk, {ThunkAction} from "redux-thunk";
 import {LoginReducer} from './reducers/LoginReducer'
+import { CourseReducer } from './reducers/CourseReducer'
 
 
 const reducers = combineReducers({
     form : reducerForm,
     login : LoginReducer,
+    course  : CourseReducer,
 })
 
 export type stateType = ReturnType<typeof store.getState>
