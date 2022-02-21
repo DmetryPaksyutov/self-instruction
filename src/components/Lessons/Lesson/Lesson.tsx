@@ -10,13 +10,15 @@ import arrowImg from '../../../img/arrow.png'
 interface IProps {
     lesson : ILesson,
     test : ITest | undefined,
-    id : string | undefined,
 }
-export const Lesson : React.FC<IProps> = ( {lesson, test, id} ) => {
+export const Lesson : React.FC<IProps> = ( {lesson, test} ) => {
     let exercisesList : undefined | JSX.Element[]
+    const id = lesson.id
+
     if (lesson && lesson.exercises.length) {
-        exercisesList = lesson.exercises.map((exercise) => <Exercise {...exercise} id={id}/>)
+        exercisesList = lesson.exercises.map((exercise) => <Exercise {...exercise} id={id} key={exercise.number}/>)
     }
+
 
     return <div className={st.lesson}>
         <details className={st.lesson__details}>

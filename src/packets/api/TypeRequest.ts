@@ -54,3 +54,21 @@ export interface ITest {
 
 }
 
+export interface IExercise {
+    name: string,
+    number: number,
+    theory: string,
+    materials : IMaterial[],
+    words: IMaterial[],
+    progress: progressItem[][],
+    balls: number,
+    percent : number
+}
+
+export interface IMaterial {
+    proposal: string,
+    proposalRus: string,
+    audio: string,
+}
+
+export type progressItem = 'no' | 'yes' | 'err'

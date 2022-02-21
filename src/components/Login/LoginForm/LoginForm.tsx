@@ -1,12 +1,13 @@
 import React from 'react'
-import { Field, InjectedFormProps, reduxForm }from "redux-form";
-import {useDispatch} from "react-redux";
-import {maxLength10, maxLength15, menLength4, menLength6, notValue, ValidatorType} from "../Validators";
+import { Field, InjectedFormProps, reduxForm }from 'redux-form'
+import {useDispatch} from 'react-redux'
+import {maxLength15, menLength6, notValue, ValidatorType} from '../Validators'
+import {loginThunk} from '../../../redux/reducers/LoginReducer/LoginActions'
 
-import {Input} from "../Input/Input";
+import {Input} from '../Input/Input'
 
 import st from '../Form.module.scss'
-import {loginThunk} from "../../../redux/reducers/LoginReducer";
+
 
 interface IProps {
 

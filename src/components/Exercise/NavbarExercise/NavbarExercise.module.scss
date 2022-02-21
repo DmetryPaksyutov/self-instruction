@@ -1,0 +1,12 @@
+@import '../../common/parameters';
+
+.navbarExercise {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: bold;
+  color: $gray;
+}

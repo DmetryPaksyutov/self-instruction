@@ -11,11 +11,12 @@ import {
 } from '../Validators'
 import { Field, InjectedFormProps, reduxForm} from 'redux-form'
 import {useDispatch} from 'react-redux'
+import {registrationThunk} from '../../../redux/reducers/LoginReducer/LoginActions'
 
 import {Input} from '../Input/Input'
 
 import st from '../Form.module.scss'
-import {registrationThunk} from "../../../redux/reducers/LoginReducer";
+
 
 const Registration = (props : IProps & InjectedFormProps<IRegFormData, IProps>) => {
     const dispatch = useDispatch()

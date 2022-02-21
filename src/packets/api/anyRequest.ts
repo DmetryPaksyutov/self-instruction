@@ -11,7 +11,7 @@ export const anyRequest = async (
     const jwt = storage.jwtStorage.get()
     if (isJwt) headers.Authorization = `Bearer ${jwt}`
     url = `http://127.0.0.1:8080/api/${url}`
-    //return axios({method, url, data, headers} )
+
     let config = {}
     switch (method) {
         case "get":

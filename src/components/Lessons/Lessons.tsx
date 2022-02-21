@@ -21,13 +21,14 @@ export const Lessons : React.FC = () => {
                 id,
                 isLogin,
             }
+
             dispatch(action)
         }
     }, [isLogin])
 
     let lessonsList : undefined | JSX.Element[]
     if (state.lessons.length) {
-        lessonsList = state.lessons.map( (lesson, index) => <Lesson lesson={lesson} test={state.tests[index]} id={id}/>)
+        lessonsList = state.lessons.map( (lesson, index) => <Lesson lesson={lesson} test={state.tests[index]} key={lesson.id}/>)
     }
 
     if (!id) return <div><label>id not find</label></div>

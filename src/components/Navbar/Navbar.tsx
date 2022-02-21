@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import {useAppSelector} from '../../packets/hooks'
 import {useDispatch} from 'react-redux'
-import {loginActions} from '../../redux/reducers/LoginReducer'
+import {LoginActions} from '../../redux/reducers/LoginReducer/LoginActions'
 
 import {NavigationMenu} from './Menu/NavigationMenu'
 import {Logo} from './Logo/Logo'
@@ -18,7 +18,7 @@ export const Navbar : React.FC = ()  => {
 
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(loginActions.updateAccount())
+        dispatch(LoginActions.updateAccount())
     }, [])
 
     return <div className={st.navbar}>
@@ -26,10 +26,10 @@ export const Navbar : React.FC = ()  => {
             <Logo/>
             <NavigationMenu style={st.navbar__navigationMenu}/>
             {(isLogin) ?
-                <div className={st.navbar__profile}><ProfileIcon /></div> :
-                <div className={st.navbar__enter}><Link to={'/login'}>Войти</Link></div> }
+                <div className={st.navbar__profile}><ProfileIcon/></div> :
+                <div className={st.navbar__enter}><Link to={'/login'}>Войти</Link></div>}
 
-            <div className={st.navbar__burger}> <Burger isLogin={isLogin}/> </div>
+            <div className={st.navbar__burger}><Burger isLogin={isLogin}/></div>
 
         </div>
     </div>

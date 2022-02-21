@@ -6,8 +6,10 @@ import {Footer} from '../Footer/Footer'
 import {Login} from '../Login/Login'
 import {Home} from '../Home/Home'
 import {Lessons} from '../Lessons/Lessons'
+import {Exercise} from "../Exercise/Exercise";
 
 import st from './App.module.scss'
+
 
 export const App : React.FC = () => {
 
@@ -18,6 +20,7 @@ export const App : React.FC = () => {
                 <Route path={'/home'} element={ <Home/> }/>
                 <Route path={'/login'} element={ <Login/> }/>
                 <Route path={'course/:id'} element={ <Lessons/> }/>
+                <Route path={'exercise/:id/:number'} element={ <Exercise/>} />
             </Routes>
         </div>
         <Footer/>

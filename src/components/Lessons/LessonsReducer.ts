@@ -44,10 +44,10 @@ export const LessonsAsyncActions = {
         try {
             let res : apiResponse<ICourse> | null
             if (action.isLogin) {
-                //res = await api.lessons.authGetCourse(action.id)
+               // res = await api.lessons.authGetCourse(action.id)
             }
             else {
-                //res = await api.lessons.getCourse(action.id)
+               // res = await api.lessons.getCourse(action.id)
             }
             //const course = res.data.data
             const course =  {
@@ -102,7 +102,7 @@ export const LessonsAsyncActions = {
             ],
                 tests: []
         }
-            //console.log(course)
+            console.log(course)
 
             dispatch(LessonsActions.setCourse(course))
         }

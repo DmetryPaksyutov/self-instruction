@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {loginActions} from "../../../redux/reducers/LoginReducer";
+import {Link} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import {LoginActions} from '../../../redux/reducers/LoginReducer/LoginActions'
 
 interface IProps {
     style : any,
@@ -9,7 +9,7 @@ interface IProps {
 
 export const ProfileMenu : React.FC<IProps> = ( {style}) => {
     const dispatch = useDispatch()
-    const onExit = () => {dispatch(loginActions.logoutAccount())}
+    const onExit = () => {dispatch(LoginActions.logoutAccount())}
 
     return <div className={style}>
         <div><Link to={'/'}>Профиль</Link></div>

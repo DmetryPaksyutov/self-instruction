@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f62f306-ec30-4741-a1f0-8e059a404230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/img/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Exercise/BallsCounter/BallsCounter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Exercise/ExerciseReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Exercise/NavbarExercise/NavbarExercise.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Exercise/NavbarExercise/NavbarExercise.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Exercise/ProgressItems/ProgressItems.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Exercise/Timer/Timer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/CoursesList/Course/Course.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CoursesList/Course/Course.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/CoursesList/Course/Course.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CoursesList/Course/Course.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/HomeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/HomeReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lessons.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lessons.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lessons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lessons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lessons/LessonsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/LessonsReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/parameters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/parameters.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/exit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginForm/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/RegistrationForm/RegistrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/RegistrationForm/RegistrationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Menu/ProfileMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Menu/ProfileMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packets/api/TypeRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/TypeRequest.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packets/api/anyRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/anyRequest.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packets/api/rest/lessons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/rest/lessons.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/LoginReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../node/self-instruction-api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Exercise/BallsCounter" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -59,18 +66,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Web\project\react\self-instruction\src\img" />
-      <recent name="D:\Web\project\react\self-instruction\src\components\Lessons\Lesson\Exercise" />
-      <recent name="D:\Web\project\react\self-instruction\src\components\Lessons" />
-      <recent name="D:\Web\project\react\self-instruction\src\components\Home\RatingList" />
-      <recent name="D:\Web\project\react\self-instruction\src\components\Home\CoursesList\Course" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Exercise\BallsCounter" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Exercise\Timer" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Exercise\ProgressItems" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\Exercise" />
+      <recent name="D:\Web\project\react\self-instruction\src\packets\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Web\project\react\self-instruction\src\redux\reducers\LoginReducer" />
+      <recent name="D:\Web\project\react\self-instruction\src\packets\api" />
       <recent name="D:\Web\project\react\self-instruction\src\components" />
       <recent name="D:\Web\project\react\self-instruction\src\components\common" />
       <recent name="D:\Web\project\react\self-instruction\src\components\Login" />
-      <recent name="D:\Web\project\react\self-instruction\src\components\Navbar\Menu" />
-      <recent name="D:\Web\project\react\self-instruction\src\components\App" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -111,6 +118,8 @@
       <workItem from="1644848031420" duration="12848000" />
       <workItem from="1644941722227" duration="4726000" />
       <workItem from="1645262109251" duration="11025000" />
+      <workItem from="1645441899664" duration="11317000" />
+      <workItem from="1645459407533" duration="8425000" />
     </task>
     <servers />
   </component>
@@ -122,10 +131,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="570" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1644035538819" />
-    <state x="620" y="258" key="FileChooserDialogImpl" timestamp="1645360156669">
+    <state x="620" y="258" key="FileChooserDialogImpl" timestamp="1645462087159">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="620" y="258" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1645360156669" />
+    <state x="620" y="258" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1645462087159" />
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1645270965334">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

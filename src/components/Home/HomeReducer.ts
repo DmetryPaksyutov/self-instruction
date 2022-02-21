@@ -42,7 +42,6 @@ export const HomeAsyncActions = {
                 //res = await api.courses.getAllCourses()
             }
             //const allCourses = res.data.data
-            //console.log(courses)
             const allCourses = [
                 {
                     category: "Англиский по уровням",

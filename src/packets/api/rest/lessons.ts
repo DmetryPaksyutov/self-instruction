@@ -8,5 +8,9 @@ export const lessons = {
 
     async authGetCourse (id : string) {
         return anyRequest('get', `${baseUrl}/authCourse`, {id}, true)
+    },
+
+    async getExercise(id : string, number : number) {
+        return anyRequest('get', `${baseUrl}/exercise`, {id, number}, true)
     }
 }

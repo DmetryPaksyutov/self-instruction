@@ -16,7 +16,7 @@ export const Exercise : React.FC<IProps> = ( {name,
                                                  balls,
                                                  id} ) => {
     const textButton = (progress == 0 && 'Начать') || (progress == 100 && 'Повторить') || 'Продолжить'
-    const patch = (id) ? `exercise/${id}/${number}` : '/home'
+    const patch = (id) ? `/exercise/${id}/${number}` : '/home'
 
     return <div className={st.exercise}>
         <Link to={patch}>
