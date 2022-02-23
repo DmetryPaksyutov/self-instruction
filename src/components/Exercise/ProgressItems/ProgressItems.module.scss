@@ -1,0 +1,28 @@
+@import '../../common/parameters';
+
+.progressItems {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.progressItems__item {
+  border-radius: 5px;
+  height: 10px;
+  margin: 5px;
+  flex: 1 1 auto;
+}
+
+.progressItems__item_no {
+  border: 1px solid $orange1;
+}
+
+.progressItems__item_yes {
+  background-color: $orange1;
+}
+
+.progressItems__item_err {
+  background-color: $red1;
+  border: none;
+}

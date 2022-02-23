@@ -1,0 +1,36 @@
+@import '../common/parameters';
+
+.exercise {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.exercise__name {
+  font-size: 22px;
+  font-family: Roboto;
+  color: $darkBlue;
+  margin-bottom: 30px;
+}
+
+.exercise__lineFunction {
+  display: grid;
+  grid-template-columns: 115px auto 110px;
+  grid-template-areas: 'timer progress balls';
+  margin-top: 30px;
+}
+
+.exercise__text {
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: bold;
+}
+.exercise__selectedText {
+  @extend .exercise__text;
+  color: $orange1
+}
+
+.test {
+  width: 600px;
+  height: 50px;
+}
