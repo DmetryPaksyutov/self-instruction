@@ -5,6 +5,7 @@ import {ProgressBar} from '../../../common/ProgressBar/ProgressBar'
 import {Link} from 'react-router-dom'
 
 import st from './Course.module.scss'
+import stButton from '../../../common/styles/button.module.scss'
 
 
 interface IProps {
@@ -17,7 +18,9 @@ export const Course : React.FC<IProps> = ({ course }) => {
         <Link to={`/course/${course.id}`}><div className={st.course__content}>
         <div className={st.course__details}>
             <div className={st.course__description}><label>{course.description}</label></div>
-            <div className={st.course__button}><button>{textButton}</button></div>
+            <div className={st.course__button}>
+                <button className={stButton.orangeButton}>{textButton}</button>
+            </div>
         </div>
         <div className={st.course__img}><img src={course.img}/></div>
 

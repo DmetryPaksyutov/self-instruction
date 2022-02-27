@@ -1,4 +1,4 @@
-@import '../../../common/parameters';
+@import '../../../common/styles/parameters';
 
 .course {
   flex:  0.3 0 200px;
@@ -121,19 +121,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  >button {
-    background-color: $orange1;
-    color: white;
-    font-size: 20px;
-    font-family: Roboto;
-    text-transform: uppercase;
-    font-weight: bold;
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    &:hover {
-      background-color: $orange2;
-    }
-  }
 }

@@ -5,6 +5,7 @@ import {ProgressBar} from '../../../common/ProgressBar/ProgressBar'
 import {Link} from 'react-router-dom'
 
 import st from './Exercise.module.scss'
+import stButton from '../../../common/styles/button.module.scss'
 
 interface IProps extends IExerciseInfo{
     id : string | undefined,
@@ -30,7 +31,9 @@ export const Exercise : React.FC<IProps> = ( {name,
                 <div className={st.exercise__details}>
                     <div className={st.exercise__label}><label>урок</label></div>
                     <div className={st.exercise__name}><label>{`${number} ${name}`}</label></div>
-                    <div className={st.exercise__button}><button>{textButton}</button></div>
+                    <div className={st.exercise__button}>
+                        <button className={stButton.orangeButton}>{textButton}</button>
+                    </div>
                 </div>
             </div>
         </Link>

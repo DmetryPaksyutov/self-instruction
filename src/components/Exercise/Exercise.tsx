@@ -13,9 +13,11 @@ import {NavbarExercise} from "./NavbarExercise/NavbarExercise";
 import {Timer} from "./Timer/Timer";
 import {ProgressItems} from "./ProgressItems/ProgressItems";
 import {Translation} from "./Translation/Translation";
+import { Dictionsry } from './Dictionary/Dictionary'
+import { Loading} from '../common/Loading/Loading'
+import {ControlButtons} from "./ControlButtons/ControlButtons";
 
 import st from './Exercise.module.scss'
-import {progressItem} from "../../packets/api/TypeRequest";
 
 
 
@@ -26,15 +28,33 @@ export const Exercise : React.FC = () => {
     let number1: number | undefined
     if (number) number1 = parseInt(number)
 
-    const {typeExercise, progress, name, materials, balls, countBall} = state
+    const {typeExercise, 
+        progress, 
+        name, 
+        materials, 
+        balls, 
+        countBall,
+        words,
+        isVisibleDictionary,
+        isLoading,
+        statusExercises,
+    } = state
 
     useEffect(() => {
-        dispatch(ExerciseActions.setExercise(isLogin, id, number1))
+        dispatch(ExerciseActions.setExercise(id, number1))
     }, [isLogin])
 
     const setTypeExercise = useCallback( (typeExercise : typeExercise) => () => {
         dispatch(ExerciseActions.setTypeExercise(typeExercise))
     }, [])
+
+    const setStatusExercise = useCallback((status : boolean) => {
+        dispatch(ExerciseActions.setStatusExercise((typeExercise - 1) as typeExercise, status))
+    }, [typeExercise])
+
+    const clearProgress = useCallback(() => {
+        dispatch(ExerciseActions.clearProgress((typeExercise - 1) as typeExercise, materials.length))
+    }, [typeExercise, materials.length])
 
     const progressItems = progress[typeExercise-1]
 
@@ -43,19 +63,28 @@ export const Exercise : React.FC = () => {
         if (isError) newProgress[typeExercise - 1][ index] = 'err'
         else newProgress[typeExercise - 1][ index] = 'yes'
         dispatch(ExerciseActions.setProgress(newProgress))
-    }, [typeExercise] )
+    }, [typeExercise, progress] )
 
     const countBalls = useCallback( (newCountBalls : number) => {
         dispatch(ExerciseActions.countBalls(newCountBalls, countBall, balls))
-    }, [balls])
+    }, [balls, countBall])
 
-    if (!isLogin)  return <div>войдите в акаунт</div>
+    const setVisibleDictionary = (isVisibleDictionary : boolean) => () => {
+        dispatch(ExerciseActions.setIsVisisbleDictionary(isVisibleDictionary))
+    }
 
     let exercise
     switch (typeExercise) {
         case 0 : exercise = <div>правило</div>
             break
-        case 1 : exercise = <div>словарь</div>
+        case 1 : 
+            exercise = <Translation materials={words}
+                                    progress={progressItems}
+                                    updateProgress={updateProgress}
+                                    countBalls={countBalls}
+                                    setStatusExercise={setStatusExercise}
+                                    status={statusExercises[typeExercise-1]}
+            />
             break
         case 2 : exercise = <div>аудирование</div>
             break
@@ -63,32 +92,56 @@ export const Exercise : React.FC = () => {
                                          progress={progressItems}
                                          updateProgress={updateProgress}
                                          countBalls={countBalls}
-                                         setTypeExercise={setTypeExercise(4)}
+                                         setStatusExercise={setStatusExercise}
+                                         status={statusExercises[typeExercise-1]}
         />
             break
         case 4 : exercise = <div>диктант</div>
             break
+        case 5 : exercise = <div>конец</div>
+            break
     }
 
-
+    if (isLoading) return <Loading/>
 
     return <div className={st.exercise}>
         <div className={st.exercise__name}><label>{name}</label></div>
 
-        <div><NavbarExercise typeExercise={typeExercise} setTypeExercise={setTypeExercise}/></div>
+        <div>
+            <NavbarExercise typeExercise={typeExercise}
+                            setTypeExercise={setTypeExercise}
+                            openDictionary={setVisibleDictionary(true)}
+            />
+        </div>
 
-        {(state.typeExercise > 0) && <div className={st.exercise__lineFunction}>
-            <Timer/>
-            <ProgressItems progress={progressItems}/>
-            <div>
+        {(typeExercise > 0 && typeExercise < 5) && <div className={st.exercise__lineFunction}>
+            <div className={st.exercise__lineFunction__timer}><Timer/></div>
+            <div className={st.exercise__lineFunction__progress}><ProgressItems progress={progressItems}/></div>
+            <div className={st.exercise__lineFunction__balls}>
                 <label className={st.exercise__text}>Баллы </label>
                 <label className={st.exercise__selectedText}>{balls}</label>
-                { (countBall != 0) && <label>{(countBall < 0) ? `${countBall}` : `+${countBall}`}</label>}
+                { (countBall != 0) && ((countBall < 0) ?
+                <div className={st.exercise__text_menuse}><label >{ countBall}</label></div> :
+                <div className={st.exercise__text_pluse}><label >{`+${countBall}`}</label></div>)
+                }
             </div>
         </div>}
 
-        <div>
+        <div className={st.exercise__body}>
             {exercise}
         </div>
+
+        {(isVisibleDictionary) && <div className={st.exercise__dictionary}>
+            <Dictionsry words={words} 
+                setVisibleDictionary={setVisibleDictionary(false)}
+            />
+            </div>
+        }
+
+        {(typeExercise > 0 && typeExercise < 5) && <ControlButtons openDictionary={setVisibleDictionary(true)}
+                                                                   setTypeExercise={setTypeExercise((typeExercise + 1) as typeExercise)}
+                                                                   clearProgress={clearProgress}
+                                                                   isActive={statusExercises[typeExercise-1]}
+        />}
     </div>
 }

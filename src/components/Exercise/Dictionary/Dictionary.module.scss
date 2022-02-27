@@ -1,0 +1,41 @@
+@import '../../common/styles/parameters';
+
+.dictionary {
+    width: 100%;
+
+    > table {
+        width: 100%;
+        font-size: 18px;
+        font-family: Roboto;
+        > caption {
+            font-size: 20px;
+            color: $darkBlue
+        }
+
+        > tr {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 30px auto auto 70px;
+            margin-top: 10px;
+
+            > th {
+                color: $orange3;
+            }
+            > td {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.dictionary__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    >button {
+        font-size: 15px;
+        width: 180px;
+    }
+}

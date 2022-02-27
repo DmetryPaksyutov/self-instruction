@@ -1,4 +1,4 @@
-@import '../../../common/parameters';
+@import '../../../common/styles/parameters';
 
 .exercise {
   flex:  0.3 0 200px;
@@ -40,11 +40,12 @@
 
 .exercise__details {
   z-index: 3;
-  width: 100%;
+  width: auto;
   height: 130px;
-  transform: translateY(60%);
+  transform: translateY(55%);
   position: relative;
   transition-duration: 600ms;
+  margin: 15px;
 }
 
 .exercise__label {
@@ -70,15 +71,6 @@
   align-items: center;
   >button {
     width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-    background-color: $orange1;
-    color: white;
-    font-size: 18px;
-    font-family: Roboto;
-    text-transform: uppercase;
-    font-weight: bold;
   }
 
 }

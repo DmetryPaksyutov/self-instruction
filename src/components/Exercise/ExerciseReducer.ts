@@ -3,34 +3,43 @@ import {AnyAction} from "redux";
 import {api} from "../../packets/api";
 import {apiResponse, IExercise, IMaterial, progressItem} from "../../packets/api/TypeRequest";
 
-export type typeExercise = 0 | 1 | 2 | 3 | 4
+export type typeExercise = 0 | 1 | 2 | 3 | 4 | 5
 
 interface IExerciseState {
-    name: string,
-    number: number,
-    theory: string,
+    name : string,
+    number : number,
+    theory : string,
     materials : IMaterial[],
-    words: IMaterial[],
+    words : IMaterial[],
     progress: progressItem[][],
-    balls: number,
-    percent: number,
+    balls : number,
+    percent : number,
 
-    typeExercise: typeExercise,
-    countBall: number,
+    statusExercises : boolean[]
+
+    isLoading : boolean,
+    typeExercise : typeExercise,
+    countBall : number,
+    isVisibleDictionary : boolean,
+
 }
 
 export const initialExerciseState : IExerciseState = {
-    name: '',
-    number: 0,
-    theory: '',
+    name : '',
+    number : 0,
+    theory : '',
     materials : [],
-    words: [],
-    progress: [],
-    balls: 0,
+    words : [],
+    progress : [],
+    balls : 0,
     percent : 0,
 
+    statusExercises : [false, false, false, false],
+
+    isLoading : false,
     typeExercise: 0,
     countBall: 0,
+    isVisibleDictionary : false,
 
 }
 
@@ -49,13 +58,33 @@ export const ExerciseReducer = (state : IExerciseState, action : ExerciseActions
 
         case 'EXERCISE__SET_TYPE_EXERCISE' : return {...state, typeExercise : action.typeExercise}
 
+        case 'EXERCISE__SET_LOADING' : return {...state, isLoading : action.isLoading}
+
         case 'EXERCISE__CREATE_PROGRESS' : return {...state, progress: action.progress}
+
+        case 'EXERCISE__CLEAR_PROGRESS' : {
+            debugger
+            let { progress, statusExercises } = state
+            progress[action.index] = action.progress
+            statusExercises[action.index] = action.status
+            return {...state, progress, statusExercises}
+        }
 
         case 'EXERCISE__SET_PROGRESS' : return {...state, progress: action.progress}
 
         case 'EXERCISE__SET_BALLS' : return {...state, balls: action.balls }
 
         case 'EXERCISE__SET_COUNT_BALLS' : return {...state, countBall : action.countBall}
+
+        case 'EXERCISE__SET_VISIBLE_DICTIONARY' : return {...state, 
+            isVisibleDictionary : action.isVisibleDictionary
+        }
+
+        case 'EXERCISE__SET_STATUS_EXERCISE' : {
+            let statusExercises = state.statusExercises
+            statusExercises[action.typeExercise] = action.status
+            return {...state, statusExercises}
+        }
 
         default : return state
     }
@@ -67,12 +96,19 @@ export const ExerciseActions = {
             type : 'EXERCISE__SAVE_EXERCISE' as const, ...exercise,
         }
     },
-    setExercise (isLogin : boolean,
+    setExercise (
                  id : string | undefined,
                  number : number | undefined) {
         return {
             type : 'EXERCISE__SET_EXERCISE' as const,
-            isLogin, id, number
+            id, number
+        }
+    },
+
+    setLoading (isLoading : boolean) {
+        return {
+            type : 'EXERCISE__SET_LOADING' as const,
+            isLoading,
         }
     },
 
@@ -99,10 +135,28 @@ export const ExerciseActions = {
             type : 'EXERCISE__CREATE_PROGRESS' as const, progress
         }
     },
+
+    clearProgress (index : number, countMaterials : number) {
+        let progress : progressItem[] = []
+        for (let i = 0; i < countMaterials; i++)
+            progress.push('no')
+        const status = false
+        return {
+            type : 'EXERCISE__CLEAR_PROGRESS' as const, progress, index, status
+        }
+    },
+
     setProgress (progress : progressItem[][]) {
         return {
             type : 'EXERCISE__SET_PROGRESS' as const,
             progress
+        }
+    },
+
+    setStatusExercise (typeExercise : typeExercise, status : boolean) {
+        return {
+            type : 'EXERCISE__SET_STATUS_EXERCISE' as const,
+            typeExercise, status
         }
     },
 
@@ -126,6 +180,13 @@ export const ExerciseActions = {
             countBall
         }
     },
+
+    setIsVisisbleDictionary (isVisibleDictionary : boolean) {
+        return {
+            type : 'EXERCISE__SET_VISIBLE_DICTIONARY' as const,
+            isVisibleDictionary
+        }
+    }
 }
 type ExerciseActionsType = ReturnType<InferValueTypes<typeof ExerciseActions>>
 
@@ -136,7 +197,9 @@ export const ExerciseAsyncActions = {
         try {
             const {id, number} = action
             let res : apiResponse<IExercise> | null
-            if (action.isLogin && id && number) {
+            if (id && number) {
+                dispatch(ExerciseActions.setLoading(true))
+
                 //res = await api.lessons.getExercise(id, number)
                 //const exercise = res.data.data
                 const exercise = {
@@ -152,7 +215,12 @@ export const ExerciseAsyncActions = {
                     progress: [],
                     percent: 0,
                     theory: "",
-                    words: [],
+                    words: [
+                        {proposal: 'i', proposalRus: 'я', audio: ''},
+                        {proposal: 'student', proposalRus: 'студент', audio: ''},
+                        {proposal: 'manager', proposalRus: 'менеджер', audio: ''},
+                        {proposal: 'doctor', proposalRus: 'доктор', audio: ''},
+                ],
                 }
                 dispatch(ExerciseActions.saveExercise(exercise))
 
@@ -161,6 +229,9 @@ export const ExerciseAsyncActions = {
                         exercise.materials.length,
                         exercise.words.length,
                     ))
+
+                dispatch(ExerciseActions.setLoading(false))
+            
             }
 
         }
@@ -174,7 +245,8 @@ export const ExerciseAsyncActions = {
         if (newBalls < 0) newBalls = 0
         dispatch(ExerciseActions.setBalls(newBalls))
         dispatch(ExerciseActions.setCountBalls(newCountBall + countBall))
-        setInterval( () => {
+        setTimeout( () => {
+            dispatch(ExerciseActions.setCountBalls(0))
             dispatch(ExerciseActions.setCountBalls(0))
         }, 1000)
     },

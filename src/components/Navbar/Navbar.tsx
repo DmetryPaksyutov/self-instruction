@@ -10,6 +10,7 @@ import {ProfileIcon} from './ProfileIcon/Profile'
 import {Burger} from './Burger/Burger'
 
 import st from './Navbar.module.scss'
+import stCenterBlock from '../common/styles/centerBlock.module.scss'
 
 
 
@@ -22,7 +23,7 @@ export const Navbar : React.FC = ()  => {
     }, [])
 
     return <div className={st.navbar}>
-        <div className={`${st.centerBlock} ${st.navbar__content}`}>
+        <div className={`${stCenterBlock.centerBlock} ${st.navbar__content}`}>
             <Logo/>
             <NavigationMenu style={st.navbar__navigationMenu}/>
             {(isLogin) ?

@@ -1,0 +1,44 @@
+@import '../../common/styles/parameters';
+
+.controlButtons {
+  display: flex;
+  justify-content: right;
+  align-items: end;
+  margin-top: 100px;
+  width: 100%;
+  >div{
+    margin-left: 20px;
+  }
+}
+
+.controlButtons__dopButton {
+  >button {
+    background-color: $white1;
+    border: none;
+    border-bottom: 2px solid $orange1;
+    color: $darkBlue;
+    font-size: 19px;
+    font-family: Roboto;
+    padding: 0 4px;
+
+    &:hover {
+      border-bottom: 2px solid $orange2;
+    }
+  }
+}
+
+.controlButtons__generalButton {
+  >button {
+    width: auto;
+    font-size: 17px;
+    padding: 0 5px;
+    text-transform: lowercase;
+
+    &:disabled {
+      border: 1px solid $orange1;
+      background-color: $white1;
+      color: $orange1;
+    }
+  }
+
+}

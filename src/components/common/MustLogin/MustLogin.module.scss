@@ -1,0 +1,57 @@
+
+
+.MustLogin {
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 600px;
+    height: 250px;
+
+    @media (max-width: 650px) {
+        width: 400px;
+    }
+
+    @media (max-width: 450px) {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.MustLogin__label {
+    text-align: center;
+    a {
+        font-size: 25px;
+        font-family: Roboto;
+        color: #3c4858;
+       &:hover {
+        color: #D2691E;
+    } 
+    }
+
+    @media (max-width: 650px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 450px) {
+        font-size: 14px;
+    }
+    
+}
+
+.MustLogin__img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    > img {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: 650px) {
+        width: 100px;
+        height: 100px;
+    }
+}

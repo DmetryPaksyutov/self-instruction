@@ -26,9 +26,9 @@ export const Burger : React.FC<IProps> = ( { isLogin }) => {
 
             <div ref={refProfileMenu}
                  className={ `${ !isVisible && stMenu.menu_noSee } ${stMenu.menu}` }>
-                {/*(!isLogin) && <div className={stMenu.menuItem}><Link to={'/login'}>Войти</Link></div>*/}
+                {(!isLogin) && <div className={stMenu.menuItems}><div><Link to={'/login'}>Войти</Link></div></div>}
                 <NavigationMenu style={stMenu.menuItems}/>
-                <ProfileMenu style={stMenu.menuItems}/>
+                {(isLogin) && <ProfileMenu style={stMenu.menuItems}/>}
             </div>
         </div>
     </div>

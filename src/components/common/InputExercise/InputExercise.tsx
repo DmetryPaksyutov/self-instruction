@@ -1,41 +1,57 @@
-import React, {useState} from 'react'
+import React, {useEffect, useReducer, useState} from 'react'
 
 import st from './InputExercise.module.scss'
 import {progressItem} from "../../../packets/api/TypeRequest";
+import {initialInputExerciseState, InputExerciseActions, InputExerciseReducer} from "./InputExerciseReducer";
+import {ExerciseActions} from "../../Exercise/ExerciseReducer";
 
 interface IProps {
     proposal: string | undefined,
     finishFun : (isError : boolean) => void,
     countBalls : (balls : number) => void,
-    returnText : () => string | null,
+    
     status : progressItem,
 }
+//returnText : () => string | null,
 
 interface IWord {
     text : string,
     status : 'default' | 'ok' | 'err'
 }
 
-export const InputExercise : React.FC<IProps> = ({ proposal, finishFun, countBalls, returnText, status}) => {
-    const [index, setIndex] = useState(0)
-    let [words, setWords] = useState<IWord[]>([{text: '', status: 'default'}])
-    const [wordsText, setWordsText] = useState('')
-    let [hint, setHint] = useState('')
-    const [errCount, setErrCount] = useState(0)
-    const [isError, setIsError] = useState(false)
+export const InputExercise : React.FC<IProps> = ({ proposal, finishFun, countBalls, status}) => {
 
-    if ( proposal && proposal[index] === ' ') {
-        if (words[words.length-1].status != 'err' ) words[words.length-1].status = 'ok'
-        words[words.length-1].text += ' '
-        words.push({text: '', status: 'default'})
-        setIndex(index + 1 )
-        setWords(words)
-        setWordsText(wordsText + ' ' )
-        setErrCount(0)
-        setHint('')
+    const [state, dispatch] = useReducer(InputExerciseReducer, initialInputExerciseState)
+    const {
+        index,
+        words,
+        hint,
+        isError,
+        inputText,
+    } = state
+
+    useEffect(() => {
+        dispatch(InputExerciseActions.setProposal(proposal))
+        dispatch(InputExerciseActions.setIndex(0))
+    }, [proposal])
+
+    useEffect (() => {
+
+        if ( proposal && proposal[index] === ' ') {
+            dispatch(InputExerciseActions.nextWord(words, index, inputText))
+        }
+
+        if (proposal && index == proposal.length) {
+            finishFun(isError)
+            dispatch(InputExerciseActions.initialState())
+        }
+
+    }, [index])
+
+    
+    if (status === 'yes') {
+        finishFun(false)
     }
-
-    if (status === 'yes') finishFun(false)
 
     const text = words.map( (word, ind) => {
         let stSpan = null
@@ -49,54 +65,21 @@ export const InputExercise : React.FC<IProps> = ({ proposal, finishFun, countBal
         return <span className={stSpan} key={ind}>{word.text}</span>
     })
 
-    if (proposal && index == proposal.length) {
-        finishFun(isError)
-        setIndex(0)
-        setWords([{text: '', status: 'default'}])
-        setWordsText('')
-        setHint('')
-        setErrCount(0)
-        setIsError(false)
-
-    }
-
-    const writeText = returnText()
-    if (writeText) {
-
-    }
-
     const onChange = (event : any) => {
         const s = event.target.value[event.target.value.length-1]
         if ( proposal && s === proposal[index]) {
-            words[words.length-1].text += s
-            if (hint) setHint(hint.slice(1))
-            setIndex(index + 1 )
-            setWords(words)
-            setWordsText(event.target.value)
-            countBalls(1)
+            dispatch(InputExerciseActions.correctWrite(s, event.target.value, words, hint, index))
+            if (status != 'yes') countBalls(1)
         }
         else {
-            setErrCount(errCount + 1)
-            if (!isError) setIsError(true)
-            words[words.length-1].status = 'err'
-            setWords(words)
-            if (errCount > 1) findHint()
-            countBalls(-3)
+            dispatch(InputExerciseActions.errorWrite())
+            if (status != 'yes') countBalls(-3)
         }
     }
 
-    const findHint = () => {
-        hint = ''
-        let i = index
-        while (proposal && (proposal[i] !== ' ' && i < proposal.length )) {
-            hint += proposal[i]
-            i++
-        }
-        setHint(hint)
-    }
-
+    
     return <div className={st.inputExercise}>
-        <input value={wordsText}
+        <input value={inputText}
                onChange={onChange}
                className={st.inputExercise__input}
                placeholder={'Введите текст'}
