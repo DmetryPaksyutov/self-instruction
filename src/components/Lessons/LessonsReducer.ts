@@ -44,13 +44,25 @@ export const LessonsAsyncActions = {
         try {
             let res : apiResponse<ICourse> | null
             if (action.isLogin) {
-               // res = await api.lessons.authGetCourse(action.id)
+                res = await api.lessons.authGetCourse(action.id)
             }
             else {
-               // res = await api.lessons.getCourse(action.id)
+                res = await api.lessons.getCourse(action.id)
             }
-            //const course = res.data.data
-            const course =  {
+            debugger
+            const course = res.data.data
+            if (course) {
+                dispatch(LessonsActions.setCourse(course))
+            }
+
+        }
+        catch (e) {
+            console.log(e)
+        }
+    },
+}
+
+const courseTest =  {
                 name : '4 С нуля - Beginner',
                 lessons: [
                 {
@@ -102,12 +114,3 @@ export const LessonsAsyncActions = {
             ],
                 tests: []
         }
-            console.log(course)
-
-            dispatch(LessonsActions.setCourse(course))
-        }
-        catch (e) {
-            console.log(e)
-        }
-    },
-}

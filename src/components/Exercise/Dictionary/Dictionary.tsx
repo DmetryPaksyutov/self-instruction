@@ -4,13 +4,14 @@ import { IMaterial } from '../../../packets/api/TypeRequest'
 import st from './Dictionary.module.scss'
 import stButton from '../../common/styles/button.module.scss'
 import stCheckbox from '../../common/styles/checkbox.module.scss'
+import {RowDictionary} from "../../common/RowDictionary/RowDictionary";
 
 interface IProps {
     words : IMaterial[],
-    setVisibleDictionary : () => void
+    closeDictionary : (selectWords : IMaterial[]) => void
 }
 
-export const Dictionsry : React.FC<IProps> = ({words, setVisibleDictionary}) => {
+export const Dictionary : React.FC<IProps> = ({words, closeDictionary}) => {
     
     let [isAddWords, setIsAddWords] = useState<boolean[]>(new Array<boolean>())
     const td = words.map((word, index) => {
@@ -20,7 +21,7 @@ export const Dictionsry : React.FC<IProps> = ({words, setVisibleDictionary}) => 
             newIsAddWords[index] = !isAdd
             setIsAddWords(newIsAddWords)
         }
-        return <tr>
+        /*return <tr>
          <td><img/></td>
          <td>{word.proposal}</td>
           <td>{word.proposalRus}</td>
@@ -29,8 +30,20 @@ export const Dictionsry : React.FC<IProps> = ({words, setVisibleDictionary}) => 
                      onChange={setIsAdd}
           />
           </td>
-      </tr>
+      </tr>*/
+        return <RowDictionary proposal={word.proposal}
+                              proposalRus={word.proposalRus}
+                              audio={word.audio} isAdd={isAdd} setIsAdd={setIsAdd}/>
       })
+
+    const onCloseDictionary = () => {
+        let selectWords : IMaterial[] = []
+        isAddWords.forEach((isAdd, index) => {
+            if (isAdd) selectWords.push(words[index])
+        })
+
+        closeDictionary(selectWords)
+    }
     
     return <div className={st.dictionary}>
         <table>
@@ -45,7 +58,7 @@ export const Dictionsry : React.FC<IProps> = ({words, setVisibleDictionary}) => 
         </table>
 
         <div className={st.dictionary__button}>
-            <button onClick={setVisibleDictionary}
+            <button onClick={onCloseDictionary}
                     className={stButton.orangeButton}
             >Перейти к упражнению</button>
         </div>

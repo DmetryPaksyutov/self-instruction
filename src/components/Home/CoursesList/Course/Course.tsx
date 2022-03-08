@@ -13,7 +13,7 @@ interface IProps {
 }
 
 export const Course : React.FC<IProps> = ({ course }) => {
-    const textButton = (course.progress == 0 && 'Начать') || (course.progress == 100 && 'Повторить') || 'Продолжить'
+    const textButton = (course.percent === 0 && 'Начать') || (course.percent === 100 && 'Повторить') || 'Продолжить'
     return <div className={st.course}>
         <Link to={`/course/${course.id}`}><div className={st.course__content}>
         <div className={st.course__details}>
@@ -25,7 +25,7 @@ export const Course : React.FC<IProps> = ({ course }) => {
         <div className={st.course__img}><img src={course.img}/></div>
 
         <div className={st.course__name}><label>{course.name}</label></div>
-        <div className={st.course__progressBar}>{(course.progress > 0) && <ProgressBar progress={course.progress}/>}</div>
+        <div className={st.course__progressBar}>{(course.percent > 0) && <ProgressBar progress={course.percent}/>}</div>
     </div></Link>
     </div>
 }

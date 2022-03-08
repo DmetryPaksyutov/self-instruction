@@ -11,6 +11,7 @@ import {Burger} from './Burger/Burger'
 
 import st from './Navbar.module.scss'
 import stCenterBlock from '../common/styles/centerBlock.module.scss'
+import {initialTimeThunk} from "../../redux/reducers/UserWork/UserWorkActions";
 
 
 
@@ -20,6 +21,7 @@ export const Navbar : React.FC = ()  => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(LoginActions.updateAccount())
+        dispatch(initialTimeThunk())
     }, [])
 
     return <div className={st.navbar}>

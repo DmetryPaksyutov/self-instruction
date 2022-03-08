@@ -47,11 +47,7 @@ export const InputExerciseReducer = (state : IInputExerciseState, action : Input
         }
 
         case 'INPUT__ERROR_WRITE' : {
-            let {words, hint, index, proposal, errCount, isError} = state
-            errCount ++
-            if (!isError) isError = true
-            words[words.length-1].status = 'err'
-            if (errCount > 1) hint = findHint(index, proposal as string)
+            let {words, hint, index, proposal, errCount, isError} = action
             return {...state, words, hint, index, proposal, errCount, isError}
         }
 
@@ -112,7 +108,6 @@ export const InputExerciseActions = {
                   words : IWord[], 
                   hint : string, 
                   index : number) {
-        debugger
         words[words.length - 1].text += s
         if (hint) hint = hint.slice(1)
         index++
@@ -123,9 +118,29 @@ export const InputExerciseActions = {
         }
     },
 
-    errorWrite () {
+    errorWrite (words : IWord[],
+                hint : string,
+                index : number,
+                proposal : string,
+                isError : boolean,
+                errCount : number
+                ) {
+        debugger
+        if (!isError) isError = true
+        words[words.length-1].status = 'err'
+        errCount++
+        if (errCount > 1) {
+            //hint = findHint(index, proposal)
+            hint = ''
+            let i = index
+            while (proposal && (proposal[i] !== ' ' && i < proposal.length )) {
+                hint += proposal[i]
+                i++
+            }
+        }
         return {
-            type : 'INPUT__ERROR_WRITE' as const
+            type : 'INPUT__ERROR_WRITE' as const,
+            words, hint, index, proposal, errCount, isError
         }
     },
 
@@ -145,6 +160,7 @@ interface IWord {
 }
 
 const findHint = (index : number, proposal : string) => {
+    debugger
     let hint = ''
     let i = index
     while (proposal && (proposal[i] !== ' ' && i < proposal.length )) {

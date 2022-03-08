@@ -1,161 +1,149 @@
 import React, {useEffect, useRef, useState} from 'react'
+import st from './AudioPlayer.module.scss'
+
+import arrowLeftImg from '../../../img/aydioPlayer/long_arrow_left.png'
+import arrowRightImg from '../../../img/aydioPlayer/long_arrow_right.png'
+import pauseImg from '../../../img/aydioPlayer/pause.png'
+import playImg from '../../../img/aydioPlayer/play.png'
 
 interface IProps {
     audioSrc : string,
+    initialIsPlaying? : boolean
     toNextTrack : () => void,
     toPrevTrack : () => void,
+    toEndTrack : () => void,
 }
 
-export const AudioPlayer : React.FC<IProps> = ({audioSrc, toNextTrack, toPrevTrack}) => {
-    const [isPlaying, setIsPlaying] = useState(false);
+export const AudioPlayer : React.FC<IProps> = ({audioSrc,
+                                                   toNextTrack,
+                                                   toPrevTrack,
+                                                   initialIsPlaying = false,
+                                                   toEndTrack
+                                               }) => {
+    const [isPlaying, setIsPlaying] = useState(initialIsPlaying);
     const [trackProgress, setTrackProgress] = useState(0);
 
     // Refs
-    const audioRef = useRef(new Audio(audioSrc));
-    const intervalRef = useRef<any>();
-    const isReady = useRef(false);
 
-    // Destructure for conciseness
-    const { duration } = audioRef.current;
+    const audioRef = useRef(new Audio(audioSrc))
+    const intervalRef = useRef<any>()
+    const isReady = useRef(false)
 
-    const currentPercentage = duration
+    const { duration } = audioRef.current
+
+   /* const currentPercentage = duration
         ? `${(trackProgress / duration) * 100}%`
-        : "0%";
+        : "0%"
     const trackStyling = `
     -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #fff), color-stop(${currentPercentage}, #777))
-  `;
+  `;*/
 
     const startTimer = () => {
         // Clear any timers already running
-        clearInterval(intervalRef.current);
+        clearInterval(intervalRef.current)
 
         intervalRef.current = setInterval(() => {
             if (audioRef.current.ended) {
-                toNextTrack();
+                toEndTrack()
+                setIsPlaying(false)
             } else {
-                setTrackProgress(audioRef.current.currentTime);
+                setTrackProgress(audioRef.current.currentTime)
             }
         }, 1000);
     };
 
     const onScrub = (value : number) => {
         // Clear any timers already running
-        clearInterval(intervalRef.current);
-        audioRef.current.currentTime = value;
-        setTrackProgress(audioRef.current.currentTime);
-    };
+        clearInterval(intervalRef.current)
+        audioRef.current.currentTime = value
+        setTrackProgress(audioRef.current.currentTime)
+    }
 
     const onScrubEnd = () => {
         // If not already playing, start
         if (!isPlaying) {
-            setIsPlaying(true);
+            setIsPlaying(true)
         }
-        startTimer();
-    };
-
-   /* const toPrevTrack = () => {
-        if (trackIndex - 1 < 0) {
-            setTrackIndex(tracks.length - 1);
-        } else {
-            setTrackIndex(trackIndex - 1);
-        }
-    };
-
-    const toNextTrack = () => {
-        if (trackIndex < tracks.length - 1) {
-            setTrackIndex(trackIndex + 1);
-        } else {
-            setTrackIndex(0);
-        }
-    };*/
+        startTimer()
+    }
 
     useEffect(() => {
         if (isPlaying) {
-            audioRef.current.play();
-            startTimer();
+            audioRef.current.play()
+            startTimer()
         } else {
-            audioRef.current.pause();
+            audioRef.current.pause()
         }
-    }, [isPlaying]);
+    }, [isPlaying])
 
-    // Handles cleanup and setup when changing tracks
     useEffect(() => {
-        audioRef.current.pause();
+        audioRef.current.pause()
 
-        audioRef.current = new Audio(audioSrc);
-        setTrackProgress(audioRef.current.currentTime);
+        audioRef.current = new Audio(audioSrc)
+        setTrackProgress(audioRef.current.currentTime)
 
         if (isReady.current) {
-            audioRef.current.play();
-            setIsPlaying(true);
-            startTimer();
+            audioRef.current.play()
+            setIsPlaying(true)
+            startTimer()
         } else {
-            // Set the isReady ref as true for the next pass
-            isReady.current = true;
+            isReady.current = true
         }
-    }, [audioSrc]);
+    }, [audioSrc])
 
     useEffect(() => {
-        // Pause and clean up on unmount
         return () => {
-            audioRef.current.pause();
-            clearInterval(intervalRef.current);
+            audioRef.current.pause()
+            clearInterval(intervalRef.current)
         };
-    }, []);
+    }, [])
 
     const onSetPlayer = (isPlaying : boolean) => () => {
         setIsPlaying(isPlaying)
     }
 
-    return <div>
-        <div>
+    return <div className={st.audioPlayer}>
+        <div className={st.audioPlayer__controlButton}>
             <button
-                type="button"
-                className="prev"
-                aria-label="Previous"
+                className={st.audioPlayer__buttonPassing}
                 onClick={toPrevTrack}
             >
-                <img />
+                <img src={arrowLeftImg}/>
             </button>
             {isPlaying ? (
                 <button
-                    type="button"
-                    className="pause"
+                    className={st.audioPlayer__buttonPlay}
                     onClick={onSetPlayer(false)}
-                    aria-label="Pause"
                 >
-                    <img />
+                    <img src={pauseImg}/>
                 </button>
             ) : (
                 <button
-                    type="button"
-                    className="play"
+                    className={st.audioPlayer__buttonPlay}
                     onClick={onSetPlayer(true)}
-                    aria-label="Play"
                 >
-                    <img/>
+                    <img src={playImg}/>
                 </button>
             )}
             <button
-                type="button"
-                className="next"
-                aria-label="Next"
+                className={st.audioPlayer__buttonPassing}
                 onClick={toNextTrack}
             >
-                <img/>
+                <img src={arrowRightImg}/>
             </button>
         </div>
-        <div><input
-            type="range"
-            value={trackProgress}
-            step="1"
-            min="0"
-            max={duration ? duration : `${duration}`}
-            className="progress"
-            onChange={(e: any) => onScrub(e.target.value)}
-            onMouseUp={onScrubEnd}
-            onKeyUp={onScrubEnd}
-            style={{ background: trackStyling }}
-        /></div>
+
     </div>
 }
+
+/*<div className={st.audioPlayer__progress}><input
+    type="range"
+    value={trackProgress}
+    step="1"
+    min="0"
+    max={duration ? duration : `${duration}`}
+    onChange={(e: any) => onScrub(e.target.value)}
+    onMouseUp={onScrubEnd}
+    onKeyUp={onScrubEnd}
+    style={{ background: trackStyling }}
+/></div>*/

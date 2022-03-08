@@ -13,16 +13,18 @@ interface IProps extends IExerciseInfo{
 
 export const Exercise : React.FC<IProps> = ( {name,
                                                  number,
-                                                 progress,
+                                                 percent,
                                                  balls,
                                                  id} ) => {
-    const textButton = (progress == 0 && 'Начать') || (progress == 100 && 'Повторить') || 'Продолжить'
+    const textButton = (percent == 0 && 'Начать') || (percent == 100 && 'Повторить') || 'Продолжить'
     const patch = (id) ? `/exercise/${id}/${number}` : '/home'
 
     return <div className={st.exercise}>
         <Link to={patch}>
             <div className={st.exercise__content}>
-                {(progress > 0) && <div><ProgressBar progress={progress}/></div>}
+                 <div className={st.exercise__progressBar}>
+                     {(percent > 0) &&<ProgressBar progress={percent}/>}
+                 </div>
 
                 {(balls > 0) && <div className={st.exercise__balls}>
                     <label>{balls} балов</label>

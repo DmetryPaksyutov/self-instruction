@@ -25,7 +25,12 @@ export const anyRequest = async (
                 headers
             }
             return axios.post(url, data, config)
-        case "put": return axios.put(url)
+        case "put": {
+            config = {
+                headers
+            }
+            return axios.put(url, data, config)
+        }
         case "delete":return axios.delete(url)
     }
 }

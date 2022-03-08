@@ -34,11 +34,6 @@
     padding: 0 5px;
     text-transform: lowercase;
 
-    &:disabled {
-      border: 1px solid $orange1;
-      background-color: $white1;
-      color: $orange1;
-    }
   }
 
 }

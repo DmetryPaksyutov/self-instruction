@@ -1,0 +1,25 @@
+
+
+.hiddenText {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hiddenText__button {
+  background: transparent;
+  border: none;
+  >img {
+    width: 35px;
+    height: 30px;
+  }
+
+}
+
+.hiddenText__textBox {
+  margin-left: 20px;
+}
+
+.hiddenText__textBox_noVisible {
+  background: #3c4858;
+}

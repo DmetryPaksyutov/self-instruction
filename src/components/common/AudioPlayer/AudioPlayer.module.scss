@@ -1,0 +1,66 @@
+@import '../styles/parameters';
+
+.audioPlayer {
+  width: 100%;
+  margin-bottom: 30px;
+  >div{
+    width: 100%;
+  }
+}
+
+.audioPlayer__controlButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  >button {
+    margin: 0 10px;
+  }
+}
+
+.audioPlayer__buttonPlay {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: $orange1;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: $orange2
+  }
+
+  >img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+}
+
+.audioPlayer__buttonPassing {
+  width: 80px;
+  height: 40px;
+  border: none;
+  background-color: $white1;
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  >img{
+    width: 80px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
+
+.audioPlayer__progress {
+  width: 100%;
+  margin-top: 20px;
+  >input {
+    width: 100%;
+  }
+}

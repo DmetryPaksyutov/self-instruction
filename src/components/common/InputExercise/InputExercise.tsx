@@ -27,12 +27,13 @@ export const InputExercise : React.FC<IProps> = ({ proposal, finishFun, countBal
         words,
         hint,
         isError,
+        errCount,
         inputText,
     } = state
 
     useEffect(() => {
         dispatch(InputExerciseActions.setProposal(proposal))
-        dispatch(InputExerciseActions.setIndex(0))
+        dispatch(InputExerciseActions.initialState())
     }, [proposal])
 
     useEffect (() => {
@@ -43,7 +44,6 @@ export const InputExercise : React.FC<IProps> = ({ proposal, finishFun, countBal
 
         if (proposal && index == proposal.length) {
             finishFun(isError)
-            dispatch(InputExerciseActions.initialState())
         }
 
     }, [index])
@@ -72,7 +72,7 @@ export const InputExercise : React.FC<IProps> = ({ proposal, finishFun, countBal
             if (status != 'yes') countBalls(1)
         }
         else {
-            dispatch(InputExerciseActions.errorWrite())
+            dispatch(InputExerciseActions.errorWrite(words, hint, index, proposal as string, isError, errCount))
             if (status != 'yes') countBalls(-3)
         }
     }

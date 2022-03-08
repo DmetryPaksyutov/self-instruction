@@ -3,6 +3,8 @@ import {AnyAction} from "redux";
 import {api} from "../../packets/api";
 import {apiResponse, IExercise, IMaterial, progressItem} from "../../packets/api/TypeRequest";
 
+
+
 export type typeExercise = 0 | 1 | 2 | 3 | 4 | 5
 
 interface IExerciseState {
@@ -13,13 +15,13 @@ interface IExerciseState {
     words : IMaterial[],
     progress: progressItem[][],
     balls : number,
-    percent : number,
+    maxBalls : number,
 
-    statusExercises : boolean[]
-
+    statusExercises : boolean[],
     isLoading : boolean,
     typeExercise : typeExercise,
     countBall : number,
+
     isVisibleDictionary : boolean,
 
 }
@@ -32,28 +34,31 @@ export const initialExerciseState : IExerciseState = {
     words : [],
     progress : [],
     balls : 0,
-    percent : 0,
+    maxBalls : 0,
 
     statusExercises : [false, false, false, false],
-
     isLoading : false,
-    typeExercise: 0,
-    countBall: 0,
+    typeExercise : 0,
+    countBall : 0,
     isVisibleDictionary : false,
 
 }
 
 export const ExerciseReducer = (state : IExerciseState, action : ExerciseActionsType) => {
     switch (action.type) {
-        case 'EXERCISE__SAVE_EXERCISE' : return {...state,
-            name : action.name,
-            number: action.number,
-            theory: action.theory,
-            materials : action.materials,
-            words: action.words,
-            progress: action.progress,
-            balls: action.balls,
-            percent : action.percent,
+        case 'EXERCISE__SAVE_EXERCISE' : {
+            return {
+                ...state,
+                name: action.name,
+                number: action.number,
+                theory: action.theory,
+                materials: action.materials,
+                words: action.words,
+                progress: action.progress,
+                balls: action.balls,
+                percent: action.percent,
+                maxBalls: action.maxBalls,
+            }
         }
 
         case 'EXERCISE__SET_TYPE_EXERCISE' : return {...state, typeExercise : action.typeExercise}
@@ -72,9 +77,13 @@ export const ExerciseReducer = (state : IExerciseState, action : ExerciseActions
 
         case 'EXERCISE__SET_PROGRESS' : return {...state, progress: action.progress}
 
-        case 'EXERCISE__SET_BALLS' : return {...state, balls: action.balls }
+        case 'EXERCISE__SET_BALLS' : {
+            let { maxBalls } = state
+            return {...state, balls: action.balls, maxBalls }
+        }
 
         case 'EXERCISE__SET_COUNT_BALLS' : return {...state, countBall : action.countBall}
+
 
         case 'EXERCISE__SET_VISIBLE_DICTIONARY' : return {...state, 
             isVisibleDictionary : action.isVisibleDictionary
@@ -85,6 +94,8 @@ export const ExerciseReducer = (state : IExerciseState, action : ExerciseActions
             statusExercises[action.typeExercise] = action.status
             return {...state, statusExercises}
         }
+
+        case 'EXERCISE__SET_STATUS_EXERCISES' : return {...state, statusExercises : action.statusExercises}
 
         default : return state
     }
@@ -181,12 +192,37 @@ export const ExerciseActions = {
         }
     },
 
-    setIsVisisbleDictionary (isVisibleDictionary : boolean) {
+    setIsVisibleDictionary (isVisibleDictionary : boolean) {
         return {
             type : 'EXERCISE__SET_VISIBLE_DICTIONARY' as const,
             isVisibleDictionary
         }
-    }
+    },
+
+    updateDictionary (words : IMaterial[]) {
+        return {
+            type : 'EXERCISE__UPDATE_DICTIONARY' as const,
+            words
+        }
+    },
+
+    updateStatistic (idLesson : string,
+                     numberExercise : number,
+                     progress : progressItem[][],
+                     balls : number,
+                     minutes : number) {
+        return {
+            type : 'EXERCISE__UPDATE_STATISTIC_USER' as const,
+            idLesson, numberExercise, progress, balls, minutes
+        }
+    },
+
+    setStatusExercises (statusExercises : boolean[]) {
+        return {
+            type : 'EXERCISE__SET_STATUS_EXERCISES' as const,
+            statusExercises,
+        }
+    },
 }
 type ExerciseActionsType = ReturnType<InferValueTypes<typeof ExerciseActions>>
 
@@ -200,28 +236,14 @@ export const ExerciseAsyncActions = {
             if (id && number) {
                 dispatch(ExerciseActions.setLoading(true))
 
-                //res = await api.lessons.getExercise(id, number)
-                //const exercise = res.data.data
-                const exercise = {
-                    balls: 0,
-                    materials: [
-                        {proposal: 'i am', proposalRus: 'я есть', audio: ''},
-                        {proposal: 'i am a student', proposalRus: 'я студент', audio: ''},
-                        {proposal: 'i am a manager', proposalRus: 'я менеджер', audio: ''},
-                        {proposal: 'i am a doctor', proposalRus: 'я доктор', audio: ''},
-                    ],
-                    name: "Я есть",
-                    number: 1,
-                    progress: [],
-                    percent: 0,
-                    theory: "",
-                    words: [
-                        {proposal: 'i', proposalRus: 'я', audio: ''},
-                        {proposal: 'student', proposalRus: 'студент', audio: ''},
-                        {proposal: 'manager', proposalRus: 'менеджер', audio: ''},
-                        {proposal: 'doctor', proposalRus: 'доктор', audio: ''},
-                ],
+                res = await api.lessons.getExercise(id, number)
+                const exercise = res.data.data
+
+                if (!exercise) {
+                    console.log('not data')
+                    return
                 }
+
                 dispatch(ExerciseActions.saveExercise(exercise))
 
                 if (!exercise.progress.length)
@@ -229,6 +251,18 @@ export const ExerciseAsyncActions = {
                         exercise.materials.length,
                         exercise.words.length,
                     ))
+
+                let statusExercises : boolean[] = []
+                for (let i = 0; i < exercise.progress.length; i ++) {
+                    let count = 0
+                    for (let j = 0; j < exercise.progress[i].length; j++) {
+                        if (exercise.progress[i][j] === 'yes') count++
+                    }
+                    if (count === exercise.progress[i].length)
+                        statusExercises.push(true)
+                    else statusExercises.push(false)
+                }
+                dispatch(ExerciseActions.setStatusExercises(statusExercises))
 
                 dispatch(ExerciseActions.setLoading(false))
             
@@ -239,6 +273,7 @@ export const ExerciseAsyncActions = {
             console.log(e)
         }
     },
+
     EXERCISE__COUNT_BALLS : ({ dispatch } : objDispatch ) => async ( action : AnyAction) => {
         const {newCountBall, balls, countBall} = action
         let newBalls = balls + newCountBall
@@ -250,4 +285,44 @@ export const ExerciseAsyncActions = {
             dispatch(ExerciseActions.setCountBalls(0))
         }, 1000)
     },
+
+    EXERCISE__UPDATE_STATISTIC_USER :  ({ dispatch } : objDispatch ) => async ( action : AnyAction) => {
+        try {
+            let res : apiResponse<boolean> | null
+            const {idLesson, numberExercise, progress, balls, minutes} = action
+            res = await api.user.putUpdateStatistic(idLesson, numberExercise, progress, balls, minutes)
+            if (res) console.log('update data')
+        }
+        catch (e) {
+            console.log(e)
+        }
+    },
+
+    EXERCISE__UPDATE_DICTIONARY : ({ dispatch } : objDispatch ) => async ( action : AnyAction) => {
+        let words = action.words
+        if (words.length) await api.user.putUpdateDictionary(words)
+        dispatch(ExerciseActions.setIsVisibleDictionary(false))
+    }
 }
+
+const exerciseTest = {
+                    balls: 0,
+                    materials: [
+                        {proposal: 'i am', proposalRus: 'я есть', audio: ''},
+                        {proposal: 'i am a student', proposalRus: 'я студент', audio: ''},
+                        {proposal: 'i am a manager', proposalRus: 'я менеджер', audio: '../testAudio/i_am_a_manager.mp3'},
+                        {proposal: 'i am a doctor', proposalRus: 'я доктор', audio: '../testAudio/i_am_a_doctor.mp3'},
+                    ],
+                    name: "Я есть",
+                    number: 1,
+                    progress: [],
+                    percent: 0,
+                    theory: "",
+                    words: [
+                        {proposal: 'i', proposalRus: 'я', audio: ''},
+                        {proposal: 'student', proposalRus: 'студент', audio: ''},
+                        {proposal: 'manager', proposalRus: 'менеджер', audio: ''},
+                        {proposal: 'doctor', proposalRus: 'доктор', audio: ''},
+                    ],
+
+                }

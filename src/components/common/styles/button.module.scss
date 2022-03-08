@@ -6,12 +6,29 @@
   font-size: 20px;
   font-family: Roboto;
   text-transform: uppercase;
-  font-weight: bold;
   width: 150px;
   height: 40px;
   border-radius: 5px;
   border: none;
+  transition-duration: 400ms;
   &:hover {
     background-color: $orange2;
+  }
+
+  &:disabled {
+    border: 1px solid $orange1;
+    background-color: $white1;
+    color: $orange1;
+  }
+
+  >div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >img {
+      margin-left: 10px;
+      width: 35px;
+      height: 30px;
+    }
   }
 }

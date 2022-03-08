@@ -23,7 +23,9 @@
     "redux-thunk": "^2.4.1",
     "typescript": "^4.5.5",
     "use-reducer-async": "^2.1.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zingchart": "^2.9.8-1",
+    "zingchart-react": "^3.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

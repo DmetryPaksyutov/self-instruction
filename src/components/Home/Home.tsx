@@ -4,8 +4,8 @@ import {useReducerAsync} from 'use-reducer-async'
 import {HomeAsyncActions, HomeReducer, initialHomeState} from './HomeReducer'
 
 import {CoursesList} from './CoursesList/CoursesList'
-import {DailyPlan} from '../common/DailyPlan/DailyPlan'
 import {RatingList} from './RatingList/RatingList'
+import { HomeDailyPlan } from './HomeDailyPlan/HomeDailyPlan'
 
 import st from './Home.module.scss'
 
@@ -22,7 +22,7 @@ export const Home : React.FC = () => {
     }, [isLogin])
 
     return <div className={st.home}>
-        <div className={st.home__dailyPlan}><DailyPlan/></div>
+        <div className={st.home__dailyPlan}><HomeDailyPlan/></div>
         <div>
             <CoursesList title={'Англиский по уровням'} courses={state.courses[0]}/>
         </div>

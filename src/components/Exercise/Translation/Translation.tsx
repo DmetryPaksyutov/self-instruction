@@ -4,6 +4,7 @@ import {progressItem} from '../../../packets/api/TypeRequest'
 import {InputExercise} from "../../common/InputExercise/InputExercise";
 
 import st from '../Exercise.module.scss'
+import {useCreateFinishFun} from "../ExerciseHooks";
 
 interface IProps {
     materials : IMaterial[],
@@ -23,26 +24,10 @@ export const Translation: React.FC<IProps> = ({
                                                   status,
                                               }) => {
     const [indexMaterial, setIndexMaterial] = useState(0)
-    const [isErrorMaterials, setIsErrorMaterials] = useState(false)
+    //const [isErrorMaterials, setIsErrorMaterials] = useState(false)
 
-    const finishFun = useCallback((isError: boolean) => {
-
-        if (!status) {
-        updateProgress(indexMaterial, isError)
-        if (isError) setIsErrorMaterials(isError)
-        if (indexMaterial < materials.length - 1) setIndexMaterial(indexMaterial + 1)
-        else {
-            if (!isErrorMaterials) {
-                setStatusExercise(true)
-                setIndexMaterial(0)
-            }
-            else {
-                setIndexMaterial(0)
-                setIsErrorMaterials(false)
-            }
-        }
-        }
-    }, [indexMaterial, status, isErrorMaterials, setStatusExercise, setIndexMaterial, updateProgress, setIsErrorMaterials])
+    const finishFun = useCreateFinishFun(indexMaterial,
+        status, setStatusExercise, setIndexMaterial, updateProgress, materials.length)
 
     return <div>
         <div className={st.exercise__header}><label>{materials[indexMaterial].proposalRus}</label></div>

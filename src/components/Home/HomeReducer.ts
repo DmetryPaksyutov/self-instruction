@@ -36,13 +36,31 @@ export const HomeAsyncActions = {
         try {
             let res : apiResponse<ICourseInfo[]> | null
             if (action.isLogin) {
-                //res = await api.courses.authGetAllCourses()
+                res = await api.courses.authGetAllCourses()
             }
             else {
-                //res = await api.courses.getAllCourses()
+                res = await api.courses.getAllCourses()
             }
-            //const allCourses = res.data.data
-            const allCourses = [
+
+            const allCourses = res.data.data
+
+            if (!allCourses) {
+                console.log('not data')
+                return
+            }
+
+            const courses :ICourseInfo[][] = []
+            courses[0] = allCourses.filter( (course) => course.category == 'Англиский по уровням')
+
+            dispatch(HomeActions.setCourses(courses))
+        }
+        catch (e) {
+            console.log(e)
+        }
+    },
+}
+
+const allCoursesTest = [
                 {
                     category: "Англиский по уровням",
                     description: "По мере прохождения курса вы научитесь понимать, читать и писать простые фразы и предложения",
@@ -72,13 +90,3 @@ export const HomeAsyncActions = {
                     name: "4 С нуля - Beginner",
                     progress: 100}
             ]
-            const courses :ICourseInfo[][] = []
-            courses[0] = allCourses.filter( (course) => course.category == 'Англиский по уровням')
-
-            dispatch(HomeActions.setCourses(courses))
-        }
-        catch (e) {
-            console.log(e)
-        }
-    },
-}

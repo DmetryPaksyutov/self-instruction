@@ -1,8 +1,8 @@
-@import '../common/styles/parameters';
+@import '../common/styles/parameters.scss';
 
 .home {
   display: grid;
-  grid-template-columns: auto 300px;
+  grid-template-columns: auto 320px;
   grid-template-areas: 'content dop';
 
   @media (max-width: 1000px) {

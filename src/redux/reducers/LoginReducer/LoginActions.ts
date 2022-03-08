@@ -28,9 +28,11 @@ export const registrationThunk =  (email : string,
     try {
         const res: loginResult = await api.auth.registration(email, username, password)
         if (res.data.code === 200) {
-            const user = {...res.data.data}
-            const {token} = user
-            dispatch(LoginActions.loginAccount(user, token))
+            const user = res.data.data
+            if (user) {
+                const {token} = user
+                dispatch(LoginActions.loginAccount(user, token))
+            }
         }
     } catch {
         console.log('ошибка при запросе')
@@ -41,13 +43,21 @@ export const registrationThunk =  (email : string,
 export const loginThunk = (email : string,
                            password : string) : LoginThunk => async dispatch => {
     try {
-        const res: loginResult = await api.auth.login(email, password)
+        const res : loginResult = await api.auth.login(email, password)
         if (res.data.code === 200) {
-            const user = {...res.data.data}
+            const user = res.data.data
+
+            if (!user) {
+                console.log('not data')
+                return null
+            }
+
             const {token} = user
             dispatch(LoginActions.loginAccount(user, token))
+
+
         }
-    } catch {
-        console.log('ошибка при запросе')
+    } catch (e) {
+        console.log(e)
     }
 }

@@ -7,12 +7,15 @@ import {useReducerAsync} from "use-reducer-async";
 import {initialLessonsState, LessonsAsyncActions, LessonsReducer} from "./LessonsReducer";
 import {useAppSelector} from "../../packets/hooks";
 import {Lesson} from "./Lesson/Lesson";
+import {useDispatch} from "react-redux";
+import {UserWorkActions} from "../../redux/reducers/UserWork/UserWorkActions";
 
 
 export const Lessons : React.FC = () => {
     const { id } = useParams()
     const isLogin = useAppSelector( state => state.login.isLogin)
     const [state, dispatch] = useReducerAsync(LessonsReducer, initialLessonsState, LessonsAsyncActions)
+    const appDispatch = useDispatch()
 
     useEffect(() => {
         if (id) {
@@ -25,6 +28,10 @@ export const Lessons : React.FC = () => {
             dispatch(action)
         }
     }, [isLogin])
+
+    useEffect(() => {
+        appDispatch(UserWorkActions.setExtremeExercises(state.lessons))
+    }, [state.lessons])
 
     let lessonsList : undefined | JSX.Element[]
     if (state.lessons.length) {

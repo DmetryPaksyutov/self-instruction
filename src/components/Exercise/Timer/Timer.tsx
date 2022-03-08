@@ -1,7 +1,11 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useInterval} from '../../../packets/hooks'
+import {eventBus} from '../../../packets/eventBus'
 
 import st from '../Exercise.module.scss'
+import {useDispatch} from "react-redux";
+import {UserWorkActions} from "../../../redux/reducers/UserWork/UserWorkActions";
+
 
 export const Timer : React.FC = () => {
     const [seconds, setSeconds] = useState(0)
@@ -15,11 +19,19 @@ export const Timer : React.FC = () => {
         else setSeconds(seconds + 1)
     }, 1000)
 
+    const dispatch = useDispatch()
+    useEffect(() => {
+        /*const replaySubscribe = eventBus.saveTime.subscribe(() => {
+            dispatch(UserWorkActions.setTime(minutes, seconds))
+        })*/
+        dispatch(UserWorkActions.setMinutes(minutes))
+        console.log(`useEffect ${minutes}`)
+        return () => {
+            //replaySubscribe()
+        }
+    }, [minutes])
+
     let time = `${(minutes < 10) ? '0'+ minutes : minutes }:${ (seconds < 10) ? '0'+ seconds : seconds}`
-    /*if (minutes < 10) time += `0${minutes} : `
-    else time += `${minutes}`
-    if (seconds < 10) time += `0${seconds}`
-    else time += `${seconds}`*/
 
     return <div>
         <label className={st.exercise__text}>Время </label>
