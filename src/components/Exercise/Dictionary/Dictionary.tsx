@@ -21,22 +21,13 @@ export const Dictionary : React.FC<IProps> = ({words, closeDictionary}) => {
             newIsAddWords[index] = !isAdd
             setIsAddWords(newIsAddWords)
         }
-        /*return <tr>
-         <td><img/></td>
-         <td>{word.proposal}</td>
-          <td>{word.proposalRus}</td>
-          <td><input type={'checkbox'}
-                     checked={isAdd}
-                     onChange={setIsAdd}
-          />
-          </td>
-      </tr>*/
         return <RowDictionary proposal={word.proposal}
                               proposalRus={word.proposalRus}
                               audio={word.audio} isAdd={isAdd} setIsAdd={setIsAdd}/>
       })
 
     const onCloseDictionary = () => {
+        debugger
         let selectWords : IMaterial[] = []
         isAddWords.forEach((isAdd, index) => {
             if (isAdd) selectWords.push(words[index])

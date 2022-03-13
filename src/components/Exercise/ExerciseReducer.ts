@@ -299,9 +299,10 @@ export const ExerciseAsyncActions = {
     },
 
     EXERCISE__UPDATE_DICTIONARY : ({ dispatch } : objDispatch ) => async ( action : AnyAction) => {
+
         let words = action.words
-        if (words.length) await api.user.putUpdateDictionary(words)
         dispatch(ExerciseActions.setIsVisibleDictionary(false))
+        if (words.length) await api.user.putUpdateDictionary(words)
     }
 }
 

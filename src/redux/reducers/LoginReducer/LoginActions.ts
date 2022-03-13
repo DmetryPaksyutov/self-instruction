@@ -1,12 +1,13 @@
 import {apiResponse, IUserLogin} from "../../../packets/api/TypeRequest";
 import {AppThunk, InferValueTypes} from "../../store";
 import {api} from "../../../packets/api";
+import {storage} from '../../../packets/storage'
 
 export const LoginActions = {
-    loginAccount ( user : IUserLogin, token : string ) {
+    loginAccount ( user : IUserLogin ) {
         return {
             type: 'LOGIN__LOGIN_ACCOUNT' as const,
-            user, token
+            user
         }
     },
     logoutAccount () {
@@ -16,6 +17,20 @@ export const LoginActions = {
     updateAccount () {
         return {type: 'LOGIN__UPDATE_ACCOUNT' as const}
     },
+
+    setUsername (username : string) {
+        return {
+            type: 'LOGIN__SET_USERNAME' as const,
+            username
+        }
+    },
+
+    setEmail (email : string) {
+        return {
+            type: 'LOGIN__SET_EMAIL' as const,
+            email
+        }
+    }
 }
 export type LoginActionsType = ReturnType<InferValueTypes<typeof LoginActions>>
 
@@ -31,7 +46,9 @@ export const registrationThunk =  (email : string,
             const user = res.data.data
             if (user) {
                 const {token} = user
-                dispatch(LoginActions.loginAccount(user, token))
+                storage.jwtStorage.set(token)
+                storage.userStorage.set(user.username, user.email, user.avatar, user.id)
+                dispatch(LoginActions.loginAccount(user))
             }
         }
     } catch {
@@ -53,7 +70,9 @@ export const loginThunk = (email : string,
             }
 
             const {token} = user
-            dispatch(LoginActions.loginAccount(user, token))
+            storage.jwtStorage.set(token)
+            storage.userStorage.set(user.username, user.email, user.avatar, user.id)
+            dispatch(LoginActions.loginAccount(user))
 
 
         }

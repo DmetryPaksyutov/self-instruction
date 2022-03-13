@@ -13,7 +13,7 @@
         grid-template-columns: 100px auto 80px;
         grid-template-areas: 'img name arrow' 'img description arrow';
 
-        width: 100%;
+        width: 95%;
         padding: 15px;
         background-color: $white2;
         border-radius: 4px;
@@ -106,6 +106,6 @@
 .lesson__list {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 95%;
     justify-content: left;
 }

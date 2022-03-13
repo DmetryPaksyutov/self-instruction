@@ -1,7 +1,7 @@
-import {InferValueTypes} from "../../redux/store";
-import {AnyAction} from "redux";
-import {api} from "../../packets/api";
-import {ICourseInfo, apiResponse} from "../../packets/api/TypeRequest";
+import {InferValueTypes} from '../../redux/store'
+import {AnyAction} from 'redux'
+import {api} from '../../packets/api'
+import {ICourseInfo, apiResponse} from '../../packets/api/TypeRequest'
 
 
 interface IHomeState {

@@ -73,3 +73,14 @@ export interface IMaterial {
 }
 
 export type progressItem = 'no' | 'yes' | 'err'
+
+export interface IStatisticsDay {
+    time : number,
+    balls : number,
+    passedExercises: number
+}
+
+export interface IDictionaryPage {
+    words : IMaterial[],
+    dictionarySize : number,
+}

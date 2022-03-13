@@ -1,0 +1,22 @@
+@import '../common/styles/parameters';
+
+.profile {
+  display: grid;
+  grid-template-areas: 'avatar info' 'statistics statistics';
+  grid-template-columns: 250px auto;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.profile__avatar {
+  grid-area: avatar;
+}
+
+.profile__info {
+  grid-area: info;
+  margin-left: 30px;
+}
+
+.profile__statistics {
+  grid-area: statistics;
+}

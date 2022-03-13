@@ -1,4 +1,5 @@
 import React, {useRef} from 'react'
+import st from './RowDictionary.module.scss'
 import soundImg from '../../../img/sound.png'
 
 interface IProps {
@@ -20,7 +21,7 @@ export const RowDictionary : React.FC<IProps> = ({proposal,
     }
 
     return <tr>
-        <td><button onClick={onPlay}><img src={soundImg}/></button></td>
+        <td><button onClick={onPlay} className={st.buttonSound}><img src={soundImg}/></button></td>
         <td>{proposal}</td>
         <td>{proposalRus}</td>
         <td><input type={'checkbox'}

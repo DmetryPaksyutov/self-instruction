@@ -48,7 +48,10 @@ export const DailyPlan : React.FC = () => {
             <div className={st.dailyPlan__progressText}><label>{percent}%</label></div>
         </div>
 
-        {(isVisibleSettings) && <SettingsDailyPlan/>}
+        {(isVisibleSettings) && <SettingsDailyPlan 
+                                    onSetVisibleSettings={onSetVisibleSettings} 
+                                    setVisibleSettings={setVisibleSettings}
+        />}
     </div>
 }
 

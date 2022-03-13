@@ -12,7 +12,7 @@ export const ProfileMenu : React.FC<IProps> = ( {style}) => {
     const onExit = () => {dispatch(LoginActions.logoutAccount())}
 
     return <div className={style}>
-        <div><Link to={'/'}>Профиль</Link></div>
+        <div><Link to={'/profile'}>Профиль</Link></div>
         <div onClick={onExit}><Link to={'/login'}>Выход</Link></div>
     </div>
 }

@@ -1,0 +1,22 @@
+.info {
+  >div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+.info__parameter {
+  font-size: 22px;
+  color: #808080;
+  font-family: Roboto;
+}
+
+.info__value {
+  color: #3c4858;
+  font-size: 22px;
+  max-width: 350px;
+  margin-left: 10px;
+}
+
+

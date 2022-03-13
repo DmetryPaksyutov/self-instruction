@@ -1,0 +1,81 @@
+@import '../common/styles/parameters.scss';
+
+.dictionary {
+    width: 100%;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.dictionary__header {
+    text-align: center;
+    color: $orange3;
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.dictionary__table {
+  width: #{"min(94%, 700px)"};
+  height: 70vh;
+  margin: 0 auto;
+
+    > table {
+        width: 100%;
+        font-size: 20px;
+        font-family: Roboto;
+        > caption {
+            font-size: 22px;
+            color: $darkBlue
+        }
+
+         tr {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 30px auto auto 90px;
+            border-bottom: 1px solid $orange1;
+            padding: 5px 10px;
+
+
+             th {
+                color: $orange3;
+                
+            }
+             td {
+                text-align: center;
+            }
+
+            &:first-child{
+                border-bottom: 2px solid $orange3;
+            }
+        }
+    }
+}
+
+.dictionary__pages {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+    >button{
+        border: none;
+        background-color: transparent;
+        color: $orange1;
+        font-size: 24px;
+        font-family: Inter;
+        margin: 0 20px;
+
+        &:hover {
+            color: $orange3;
+            font-weight: bold;
+        }
+    }
+}
+
+.dictionary__pageActive {
+    color: $orange3;
+    font-weight: bold;
+}

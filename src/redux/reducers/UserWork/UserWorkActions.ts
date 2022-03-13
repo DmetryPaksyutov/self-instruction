@@ -53,8 +53,8 @@ type UserWorkThunk = AppThunk<UserWorkActionsType>
 
 export const initialTimeThunk = () : UserWorkThunk => async dispatch => {
     try {
-        
         const  settingsDailyPlan = storage.dailyPlanStorage.getSettingsDailyPlan()
+        if (!settingsDailyPlan) storage.dailyPlanStorage.setSettingsDailyPlan(15)
         let timeWork = storage.dailyPlanStorage.getTimeWork()
         let percent = 0
         if (!timeWork) timeWork = 0
@@ -74,6 +74,19 @@ export const updateTimeThunk = (minutes : number) : UserWorkThunk => async dispa
         let timeWork = storage.dailyPlanStorage.getTimeWork()
         dispatch(UserWorkActions.setTime(timeWork))
         dispatch(UserWorkActions.setMinutes(0))
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
+
+export const updateSettingsThunk = (settingsDailyPlan : settingsDailyPlanType) : UserWorkThunk => async dispatch => {
+    try {
+        storage.dailyPlanStorage.setSettingsDailyPlan(settingsDailyPlan)
+        const timeWork = storage.dailyPlanStorage.getTimeWork()
+        let percent = 0
+        if (timeWork) percent = Math.round(timeWork * 100 / settingsDailyPlan)
+        dispatch(UserWorkActions.setTimeAndSating(timeWork, settingsDailyPlan, percent))
     }
     catch (e) {
         console.log(e)

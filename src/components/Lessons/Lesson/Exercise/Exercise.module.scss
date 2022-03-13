@@ -15,17 +15,25 @@
   }
 
   &:hover {
+    box-shadow: 0 0 3px 1px $orange1;
+
     .exercise__details {
       transform: translateY(0);
     }
+  }
+
+  @media (max-width: 450px) {
+    max-width: 100%;
+    margin-right: 0;
   }
 }
 
 .exercise__content {
   width: 100%;
   height: 100%;
-  border-radius: inherit;
+  border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .exercise__progressBar {
@@ -33,22 +41,29 @@
   height: 20px;
   border-radius: 10px;
   top: 0;
-  position: absolute;
+  position: relative;
+  z-index: 1;
 }
 
 .exercise__balls {
   font-size: 14px;
+  font-family: Roboto;
+  font-weight: bold;
+  margin-left: 10px;
   color: $orange3
 }
 
 .exercise__details {
-  z-index: 3;
-  width: auto;
-  height: 130px;
-  transform: translateY(55%);
-  position: relative;
+  z-index: 10;
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: $white2;
+  transform: translateY(50%);
+  position: absolute;
+  top: 0;
   transition-duration: 600ms;
-  margin: 15px;
+  padding: 15px;
 }
 
 .exercise__label {

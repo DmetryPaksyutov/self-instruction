@@ -1,6 +1,6 @@
 @import '../../common/styles/parameters';
 
-.navbarExercise {
+.additionalNavbar {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -15,7 +15,7 @@
     margin-right: 10px;
 
     &:hover {
-      @extend .navbarExercise__item_active;
+      @extend .additionalNavbar__item_active;
     }
 
     @media (max-width: 650px) {
@@ -28,10 +28,10 @@
   }
 }
 
-.navbarExercise__item {
+.additionalNavbar__item {
   color: $gray;
 }
 
-.navbarExercise__item_active {
+.additionalNavbar__item_active {
   color: $darkBlue;
 }

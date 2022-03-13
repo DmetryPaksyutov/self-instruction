@@ -8,7 +8,6 @@ import {ExerciseAsyncActions,
 } from './ExerciseReducer'
 import {useAppSelector} from '../../packets/hooks'
 import {useParams} from 'react-router-dom'
-import {NavbarExercise} from './NavbarExercise/NavbarExercise'
 
 import {Timer} from './Timer/Timer'
 import {ProgressItems} from './ProgressItems/ProgressItems'
@@ -23,6 +22,7 @@ import {ResultExercise} from './ResultExercise/ResultExercise'
 import st from './Exercise.module.scss'
 import {Theory} from "./Theory/Theory";
 import {IMaterial} from "../../packets/api/TypeRequest";
+import {AdditionalNavbar} from "../common/AdditionalNavbar/AdditionalNavbar";
 
 
 
@@ -55,8 +55,8 @@ export const Exercise : React.FC = () => {
         if (id && number1) dispatch(ExerciseActions.updateStatistic(id, number1, progress, balls, minutes))
     }, [id, number1, progress, balls])
 
-    const setTypeExercise = useCallback( (typeExercise : typeExercise) => () => {
-        dispatch(ExerciseActions.setTypeExercise(typeExercise))
+    const setTypeExercise = useCallback( (typeExercise : number) => () => {
+        dispatch(ExerciseActions.setTypeExercise(typeExercise as typeExercise))
     }, [])
 
     const clearProgress = useCallback(() => {
@@ -75,15 +75,21 @@ export const Exercise : React.FC = () => {
 
     let exercise = useCreateExercise(state, dispatch, updateStatistic, id, number1, setTypeExercise)
 
+    useEffect(() => {
+        if (typeExercise === 1) {
+            setVisibleDictionary(true)()
+        }
+    }, [typeExercise])
+
     if (isLoading) return <Loading/>
 
     return <div className={st.exercise}>
         <div className={st.exercise__name}><label>{name}</label></div>
 
         <div>
-            <NavbarExercise typeExercise={typeExercise}
-                            setTypeExercise={setTypeExercise}
-                            openDictionary={setVisibleDictionary(true)}
+            <AdditionalNavbar activeItem={typeExercise}
+                              setActiveItem={setTypeExercise}
+                              listItems={['Правило', 'Словарь', 'Аудирование', 'Переод', 'Диктант']}
             />
         </div>
 

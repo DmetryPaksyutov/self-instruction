@@ -12,7 +12,7 @@ export const Login : React.FC = () => {
     const [isReg, setIsReg] = useState(false)
 
     const isLogin = useAppSelector(state => state.login.isLogin)
-    if (isLogin) return <Navigate to={'/home'}/>
+    if (isLogin) return <Navigate to={'/'}/>
 
 
     const stReg = `${st.login__typeForm} ${(isReg) ? st.login__typeForm_active : st.login__typeForm_noActive}`

@@ -24,7 +24,7 @@ export const UserWorkReducer = (state : IUserWorkState = initialUserWorkState,
     ) => {
     switch (action.type) {
         case 'USER_WORK__SET_TIME_AND_SETTINGS' : return {...state,  
-            satingDailyPlan : action.settingsDailyPlan, 
+            settingsDailyPlan : action.settingsDailyPlan,
             timeWork : action.timeWork,
             percent : action.percent
         }

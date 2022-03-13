@@ -7,6 +7,8 @@ import {loginThunk} from '../../../redux/reducers/LoginReducer/LoginActions'
 import {Input} from '../Input/Input'
 
 import st from '../Form.module.scss'
+import stButton from "../../common/styles/button.module.scss";
+import arrowImg from "../../../img/small_arrow.png";
 
 
 interface IProps {
@@ -48,7 +50,11 @@ const Login = (props : IProps & InjectedFormProps<ILoginFormData & IProps>) => {
                     validate={passwordValidators}
                 />
             </div>
-            <div className={st.form__button}><button >Войти</button></div>
+            <div className={st.form__button}>
+                <button className={stButton.orangeButton}>
+                    <div>Войти<img src={arrowImg}/></div>
+                </button>
+            </div>
         </form>
     </div>
 }

@@ -16,6 +16,8 @@ import {registrationThunk} from '../../../redux/reducers/LoginReducer/LoginActio
 import {Input} from '../Input/Input'
 
 import st from '../Form.module.scss'
+import stButton from '../../common/styles/button.module.scss'
+import arrowImg from '../../../img/small_arrow.png'
 
 
 const Registration = (props : IProps & InjectedFormProps<IRegFormData, IProps>) => {
@@ -67,7 +69,10 @@ const Registration = (props : IProps & InjectedFormProps<IRegFormData, IProps>) 
                     validate={passwordValidators}
                 />
             </div>
-            <div className={st.form__button} ><button>Завести акаунт</button></div>
+            <div className={st.form__button} >
+                <button className={stButton.orangeButton}>
+                <div>Создат акаунт<img src={arrowImg}/></div>
+            </button></div>
         </form>
     </div>
 }

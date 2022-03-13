@@ -2,62 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f62f306-ec30-4741-a1f0-8e059a404230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Exercise/Dictation/Dictation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Exercise/ExerciseHooks.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Exercise/Listening/HiddenText/HiddenText.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Exercise/Listening/HiddenText/HiddenText.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Exercise/ResultExercise/ResultExercise.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Exercise/ResultExercise/ResultExercise.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Exercise/Theory/Theory.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Exercise/Theory/Theory.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Statistics/Statistics.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/AudioPlayer/AudioPlayer.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/RowDictionary/RowDictionary.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/RowDictionary/RowDictionary.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/aydioPlayer/long_arrow_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/aydioPlayer/long_arrow_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/aydioPlayer/pause.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/aydioPlayer/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/eye/eye_closed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/eye/eye_open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/sound.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packets/api/rest/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packets/eventBus/eventBus.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packets/eventBus/events/SaveTime.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/packets/eventBus/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotPage/NotPage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NotPage/NotPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Statistics/Chart/Chart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Statistics/Statistics.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Statistics/StatisticsReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/book-stack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/default_avatar_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/ControlButtons/ControlButtons.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/ControlButtons/ControlButtons.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/ControlButtons/ControlButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/ControlButtons/ControlButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Exercise/Dictionary/Dictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/Dictionary/Dictionary.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Exercise/Exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/Exercise.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Exercise/ExerciseReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/ExerciseReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/Listening/Listening.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/Listening/Listening.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/Timer/Timer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/Timer/Timer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/Translation/Translation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/Translation/Translation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/CoursesList/Course/Course.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/CoursesList/Course/Course.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Exercise/NavbarExercise/NavbarExercise.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/AdditionalNavbar/AdditionalNavbar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Exercise/NavbarExercise/NavbarExercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/AdditionalNavbar/AdditionalNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Exercise/ResultExercise/ResultExercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/ResultExercise/ResultExercise.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/HomeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/HomeReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lessons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lessons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lessons/LessonsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/LessonsReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/AudioPlayer/AudioPlayer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/AudioPlayer/AudioPlayer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Form.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Form.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginForm/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/RegistrationForm/RegistrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/RegistrationForm/RegistrationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Menu/NavigationMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Menu/NavigationMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Menu/ProfileMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Menu/ProfileMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Statistics/Statistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Statistics/Statistics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/InputExercise/InputExercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputExercise/InputExercise.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/InputExercise/InputExerciseReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputExercise/InputExerciseReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/styles/button.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/styles/button.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/DailyPlan/SettingsDailyPlan/SettingsDailyPlan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DailyPlan/SettingsDailyPlan/SettingsDailyPlan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/RowDictionary/RowDictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/RowDictionary/RowDictionary.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/packets/api/TypeRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/TypeRequest.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packets/api/anyRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/anyRequest.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packets/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packets/storage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/storage/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/CourseReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packets/api/rest/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/rest/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/UserWork/UserWorkActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/UserWork/UserWorkActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/UserWork/UserWorkReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/UserWork/UserWorkReducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +56,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="TypeScript JSX File" />
         <option value="JavaScript File" />
         <option value="TypeScript File" />
         <option value="SCSS File" />
-        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -100,19 +88,19 @@
     <property name="ts.external.directory.path" value="D:\Web\project\react\self-instruction\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Web\project\react\self-instruction\src\img" />
+      <recent name="D:\Web\project\react\self-instruction\src\components\common\AdditionalNavbar" />
+      <recent name="D:\Web\project\react\self-instruction\src\img\eye" />
+      <recent name="D:\Web\project\react\self-instruction\src\img\aydioPlayer" />
+      <recent name="D:\Web\project\react\self-instruction\src\testAudio" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Web\project\react\self-instruction\src\components" />
       <recent name="D:\Web\project\react\self-instruction\src\components\Exercise\Listening" />
       <recent name="D:\Web\project\react\self-instruction\src\components\Exercise\Dictionary" />
       <recent name="D:\Web\project\react\self-instruction\src\components\common\styles" />
       <recent name="D:\Web\project\react\self-instruction\src\img" />
-      <recent name="D:\Web\project\react\self-instruction\src\redux\reducers\LoginReducer" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Web\project\react\self-instruction\src\img" />
-      <recent name="D:\Web\project\react\self-instruction\src\img\eye" />
-      <recent name="D:\Web\project\react\self-instruction\src\img\aydioPlayer" />
-      <recent name="D:\Web\project\react\self-instruction\src\testAudio" />
-      <recent name="D:\Web\project\react\self-instruction\src\components\Exercise\BallsCounter" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -175,7 +163,14 @@
       <workItem from="1646572640207" duration="9701000" />
       <workItem from="1646647019516" duration="11573000" />
       <workItem from="1646710594884" duration="10561000" />
-      <workItem from="1646741014249" duration="7426000" />
+      <workItem from="1646741014249" duration="7572000" />
+      <workItem from="1646836169922" duration="1047000" />
+      <workItem from="1646837336515" duration="95000" />
+      <workItem from="1646838034469" duration="11400000" />
+      <workItem from="1647004251125" duration="15918000" />
+      <workItem from="1647077435985" duration="5455000" />
+      <workItem from="1647088878839" duration="5961000" />
+      <workItem from="1647162641092" duration="13069000" />
     </task>
     <servers />
   </component>
@@ -187,10 +182,18 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="570" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1644035538819" />
-    <state x="620" y="258" key="FileChooserDialogImpl" timestamp="1646652542574">
+    <state x="620" y="258" key="FileChooserDialogImpl" timestamp="1647079489208">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="620" y="258" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1646652542574" />
+    <state x="620" y="258" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1647079489208" />
+    <state x="92" y="92" width="1496" height="826" key="dock-window-1" timestamp="1646837426145">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="92" y="92" width="1496" height="826" key="dock-window-1/0.0.1680.1010@0.0.1680.1010" timestamp="1646837426145" />
+    <state x="92" y="92" width="1496" height="826" key="dock-window-2" timestamp="1646837426145">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="92" y="92" width="1496" height="826" key="dock-window-2/0.0.1680.1010@0.0.1680.1010" timestamp="1646837426145" />
     <state x="496" y="227" width="672" height="677" key="run.anything.popup" timestamp="1645547572489">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

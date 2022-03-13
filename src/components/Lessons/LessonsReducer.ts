@@ -49,7 +49,6 @@ export const LessonsAsyncActions = {
             else {
                 res = await api.lessons.getCourse(action.id)
             }
-            debugger
             const course = res.data.data
             if (course) {
                 dispatch(LessonsActions.setCourse(course))

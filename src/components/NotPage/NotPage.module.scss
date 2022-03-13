@@ -1,0 +1,41 @@
+@import '../common/styles/parameters';
+
+.notPage {
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  font-family: Roboto;
+
+  >h2 {
+    color: $orange1;
+    display: block;
+    margin-bottom: 5px;
+    font-family: Inter;
+    font-size: 40px;
+  }
+
+  >h4 {
+    color: $orange1;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+
+  >p {
+    font-size: 20px;
+  }
+
+  >a{
+    font-size: 20px;
+    color: #3c4858;
+    &:hover {
+      color: #D2691E;
+    }
+  }
+}

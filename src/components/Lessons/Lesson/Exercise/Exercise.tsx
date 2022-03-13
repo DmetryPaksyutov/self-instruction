@@ -22,13 +22,13 @@ export const Exercise : React.FC<IProps> = ( {name,
     return <div className={st.exercise}>
         <Link to={patch}>
             <div className={st.exercise__content}>
-                 <div className={st.exercise__progressBar}>
+                <div><div className={st.exercise__progressBar}>
                      {(percent > 0) &&<ProgressBar progress={percent}/>}
                  </div>
 
                 {(balls > 0) && <div className={st.exercise__balls}>
                     <label>{balls} балов</label>
-                </div>}
+                </div>} </div>
 
                 <div className={st.exercise__details}>
                     <div className={st.exercise__label}><label>урок</label></div>

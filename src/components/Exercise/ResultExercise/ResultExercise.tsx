@@ -80,10 +80,8 @@ const createStars = (balls : number, maxBalls : number) => {
 
 const useCreateNextPath = (idLesson : string | undefined,
                            numberExercise : number | undefined) => {
-    let path = '/home'
+    let path = '/'
     const  extremeExercises = useAppSelector(state => state.userWork.extremeExercises)
-
-    debugger
     if (idLesson && numberExercise && extremeExercises) {
         const nextNumberExercise = numberExercise + 1
         let nextIdLesson = idLesson

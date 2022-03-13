@@ -1,0 +1,23 @@
+@import '../../../common/styles/parameters';
+
+.textInput__value {
+  &:hover {
+    color: $orange3;
+    text-decoration: underline;
+  }
+}
+
+.textInput__input {
+  border-color: $orange3;
+  height: 26px;
+  width: 300px;
+  padding: 4px;
+  font-size: 22px;
+  border-radius: 6px;
+  font-family: Inter;
+  &:focus{
+    border: 2px solid $orange3;
+    outline: none;
+
+  }
+}

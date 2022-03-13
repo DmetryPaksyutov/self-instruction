@@ -1,0 +1,47 @@
+@import '../../common/styles/parameters';
+
+.statistics {
+  display: grid;
+  grid-template-areas: 'header header' 'statistics dailyPlan';
+  grid-template-columns: 250px auto;
+  grid-template-row: 30px auto;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.statistics__data {
+  grid-area: statistics;
+
+  >div{
+    margin-top: 15px;
+    font-size: 24px;
+    font-family: Roboto;
+
+  }
+}
+
+.statistics__dailyPlan {
+  grid-area: dailyPlan;
+}
+
+.statistics__dailyPlan__header {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 22px;
+  color: $darkBlue;
+  margin-bottom: 10px;
+}
+
+.statistics__dailyPlan__block {
+  max-width: 220px;
+  margin: 10px auto;
+}
+
+.statistics__header {
+  grid-area: header;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 26px;
+  color: $darkBlue;
+  margin-bottom: 20px;
+}

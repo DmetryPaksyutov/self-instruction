@@ -10,9 +10,9 @@
 
 .navbar__content {
   display: grid;
-  grid-template-columns: 80px auto 120px;
+  grid-template-columns: 60px auto 120px;
   grid-template-areas: 'logo menu icon';
-  padding: 0 15px;
+  padding: 0 14px;
 }
 
 
