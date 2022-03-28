@@ -2,50 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f62f306-ec30-4741-a1f0-8e059a404230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/NotPage/NotPage.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotPage/NotPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Statistics/Chart/Chart.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Statistics/Statistics.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Statistics/StatisticsReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/book-stack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/default_avatar_2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/Dictionary/Dictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/Dictionary/Dictionary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/Exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/Exercise.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/ExerciseReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/ExerciseReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/NavbarExercise/NavbarExercise.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/AdditionalNavbar/AdditionalNavbar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/NavbarExercise/NavbarExercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/AdditionalNavbar/AdditionalNavbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Exercise/ResultExercise/ResultExercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Exercise/ResultExercise/ResultExercise.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/HomeReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/HomeReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Exercise/Exercise.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lesson/Lesson.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Lessons/Lessons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/Lessons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lessons/LessonsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lessons/LessonsReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Form.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Form.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginForm/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/RegistrationForm/RegistrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/RegistrationForm/RegistrationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Logo/Logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Menu/NavigationMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Menu/NavigationMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Menu/ProfileMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Menu/ProfileMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Statistics/Statistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Statistics/Statistics.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DailyPlan/DailyPlan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/DailyPlan/SettingsDailyPlan/SettingsDailyPlan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/DailyPlan/SettingsDailyPlan/SettingsDailyPlan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/RowDictionary/RowDictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/RowDictionary/RowDictionary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packets/api/TypeRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/TypeRequest.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packets/api/rest/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/rest/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/LoginReducer/LoginReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/UserWork/UserWorkActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/UserWork/UserWorkActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/UserWork/UserWorkReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/UserWork/UserWorkReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputExercise/InputExercise.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputExercise/InputExercise.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packets/api/anyRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/packets/api/anyRequest.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -170,7 +133,11 @@
       <workItem from="1647004251125" duration="15918000" />
       <workItem from="1647077435985" duration="5455000" />
       <workItem from="1647088878839" duration="5961000" />
-      <workItem from="1647162641092" duration="13069000" />
+      <workItem from="1647162641092" duration="13746000" />
+      <workItem from="1647270230410" duration="3176000" />
+      <workItem from="1648047413073" duration="625000" />
+      <workItem from="1648056593663" duration="1453000" />
+      <workItem from="1648476998467" duration="2329000" />
     </task>
     <servers />
   </component>
@@ -182,10 +149,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="570" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1644035538819" />
-    <state x="620" y="258" key="FileChooserDialogImpl" timestamp="1647079489208">
+    <state x="620" y="258" key="FileChooserDialogImpl" timestamp="1648056729647">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="620" y="258" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1647079489208" />
+    <state x="620" y="258" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1648056729647" />
     <state x="92" y="92" width="1496" height="826" key="dock-window-1" timestamp="1646837426145">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

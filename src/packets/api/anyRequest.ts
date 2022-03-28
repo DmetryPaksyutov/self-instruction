@@ -10,7 +10,10 @@ export const anyRequest = async (
 ) => {
     const jwt = storage.jwtStorage.get()
     if (isJwt) headers.Authorization = `Bearer ${jwt}`
-    url = `http://127.0.0.1:8080/api/${url}`
+    console.log('запрос')
+    //url = `http://127.0.0.1:8080/api/${url}`
+    url = `https://glacial-lake-85871.herokuapp.com/api/${url}`
+    console.log(url)
 
     let config = {}
     switch (method) {

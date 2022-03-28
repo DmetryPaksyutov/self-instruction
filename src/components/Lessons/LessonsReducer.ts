@@ -8,22 +8,28 @@ interface ILessonsState {
     lessons : ILesson[],
     tests : any[],
     name : string,
+    isLoading : boolean,
 }
 
 export const initialLessonsState : ILessonsState = {
     lessons : [],
     tests : [],
     name : '',
+    isLoading : false,
 }
 
 export const LessonsReducer = (state : ILessonsState, action : LessonsActionsType) => {
     switch (action.type) {
-        case "LESSONS__SAVE_COURSE" :
+        case "LESSONS__SAVE_COURSE" : {
             return {...state,
                 lessons : action.course.lessons,
                 tests : action.course.tests,
                 name : action.course.name,
             }
+        }
+
+        case 'LESSONS__SET_LOADING' : return {...state, isLoading : action.isLoading}
+
         default : return state
     }
 }
@@ -32,6 +38,12 @@ export const LessonsActions = {
     setCourse ( course : ICourse) {
         return {
             type : 'LESSONS__SAVE_COURSE' as const, course,
+        }
+    },
+
+    setLoading (isLoading : boolean) {
+        return {
+            type : 'LESSONS__SET_LOADING' as const, isLoading,
         }
     }
 }
@@ -42,6 +54,8 @@ type objDispatch = {  dispatch : any }
 export const LessonsAsyncActions = {
     LESSONS__SET_COURSE : ({ dispatch } : objDispatch ) => async ( action : AnyAction) => {
         try {
+            //debugger
+            dispatch(LessonsActions.setLoading(true))
             let res : apiResponse<ICourse> | null
             if (action.isLogin) {
                 res = await api.lessons.authGetCourse(action.id)
@@ -53,10 +67,12 @@ export const LessonsAsyncActions = {
             if (course) {
                 dispatch(LessonsActions.setCourse(course))
             }
+            dispatch(LessonsActions.setLoading(false))
 
         }
         catch (e) {
             console.log(e)
+            dispatch(LessonsActions.setLoading(false))
         }
     },
 }

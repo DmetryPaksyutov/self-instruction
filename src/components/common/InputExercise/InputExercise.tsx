@@ -9,7 +9,6 @@ interface IProps {
     proposal: string | undefined,
     finishFun : (isError : boolean) => void,
     countBalls : (balls : number) => void,
-    
     status : progressItem,
 }
 //returnText : () => string | null,

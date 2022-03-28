@@ -6,16 +6,20 @@ import {ICourseInfo, apiResponse} from '../../packets/api/TypeRequest'
 
 interface IHomeState {
     courses : ICourseInfo[][],
+    isLoading : boolean,
 }
 
 export const initialHomeState : IHomeState = {
     courses : [],
+    isLoading : false,
 }
 
 export const HomeReducer = (state : IHomeState, action : HomeActionsType) => {
     switch (action.type) {
-        case "HOME__SAVE_COURSES" :
-            return {...state, courses : action.courses}
+        case "HOME__SAVE_COURSES" : return {...state, courses : action.courses}
+        case 'HOME__SET_LOADING' : return {...state, isLoading : action.isLoading}
+
+
         default : return state
     }
 }
@@ -24,6 +28,12 @@ export const HomeActions = {
     setCourses ( courses : ICourseInfo[][]) {
         return {
             type : 'HOME__SAVE_COURSES' as const, courses,
+        }
+    },
+
+    setLoading (isLoading : boolean) {
+        return {
+            type : 'HOME__SET_LOADING' as const, isLoading,
         }
     }
 }
@@ -34,6 +44,7 @@ type objDispatch = {  dispatch : any }
 export const HomeAsyncActions = {
     HOME__SET_COURSES : ({ dispatch } : objDispatch ) => async ( action : AnyAction) => {
         try {
+            dispatch(HomeActions.setLoading(true))
             let res : apiResponse<ICourseInfo[]> | null
             if (action.isLogin) {
                 res = await api.courses.authGetAllCourses()
@@ -53,9 +64,11 @@ export const HomeAsyncActions = {
             courses[0] = allCourses.filter( (course) => course.category == 'Англиский по уровням')
 
             dispatch(HomeActions.setCourses(courses))
+            dispatch(HomeActions.setLoading(false))
         }
         catch (e) {
             console.log(e)
+            dispatch(HomeActions.setLoading(false))
         }
     },
 }
