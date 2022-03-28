@@ -89,7 +89,7 @@ export const Exercise : React.FC = () => {
         <div>
             <AdditionalNavbar activeItem={typeExercise}
                               setActiveItem={setTypeExercise}
-                              listItems={['Правило', 'Словарь', 'Аудирование', 'Переод', 'Диктант']}
+                              listItems={['Правило', 'Словарь', 'Аудирование', 'Перевод', 'Диктант']}
             />
         </div>
 
